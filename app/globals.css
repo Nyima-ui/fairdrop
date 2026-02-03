@@ -22,4 +22,8 @@
   --radius-lg: var(--radius);
   --text-4xl: 27px;
   --text-5xl: 47px;
+  --breakpoint-xs: 480px;
+}
+input.dark{
+  color-scheme: dark;
 }
