@@ -28,7 +28,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href={""} className="flex gap-1.75 items-center">
+            <Link href="/flights" className="flex gap-1.75 items-center">
               <Image height={28} width={28} src="/icons/airplane.svg" alt="" />
               <span>Search</span>
             </Link>

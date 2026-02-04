@@ -28,7 +28,7 @@ const Features = () => {
       {features.map((item, idx) => (
         <article
           key={idx}
-          className={`flex justify-between items-center py-15 gap-10 max-sm:gap-0 ${idx === 1 ? "flex-row-reverse" : ""} max-sm:flex-col`}
+          className={`flex justify-between items-center py-15 max-sm:py-11.25 gap-10 max-sm:gap-0 ${idx === 1 ? "flex-row-reverse" : ""} max-sm:flex-col`}
         >
           <div className="max-w-121.5">
             <h3 className="text-4xl">{item.heading}</h3>

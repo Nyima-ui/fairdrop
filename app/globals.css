@@ -27,3 +27,7 @@
 input.dark{
   color-scheme: dark;
 }
+abbr[title]{
+  text-decoration: none;
+  cursor: help;
+}

@@ -5,7 +5,7 @@ const Search = () => {
     <form
       role="search"
       aria-label="Flight search"
-      className="flex bg-input-background px-1.25 py-1.75 gap-3 mt-15 rounded-lg w-full flex-wrap"
+      className="flex bg-input-background px-1.25 py-1.75 gap-3 mt-15 rounded-lg w-full flex-wrap max-sm:mt-14 justify-center"
     >
       <div className="flex gap-5">
         <div>
@@ -45,7 +45,7 @@ const Search = () => {
         </div>
       </div>
 
-      <div className="flex flex-1 gap-5">
+      <div className="flex flex-1 gap-5  justify-center">
         <div className="max-sm:w-46.25">
           <label htmlFor="departure" className="sr-only">
             Departure
@@ -63,11 +63,12 @@ const Search = () => {
 
         <button
           type="submit"
-          className="bg-primary font-medium px-5 py-3 rounded-sm cursor-pointer flex-1 block"
+          className="bg-primary font-medium px-5 py-3 rounded-sm cursor-pointer flex-1 block max-w-[400px]"
         >
           Search
         </button>
       </div>
+
     </form>
   );
 };
