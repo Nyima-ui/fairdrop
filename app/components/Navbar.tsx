@@ -16,7 +16,7 @@ const Navbar = () => {
           <Image height={45} width={137} src="/logo.svg" alt="" />
         </Link>
         <ul className="flex gap-3.75 sm:gap-11.25 items-center shrink-0">
-          <li>
+          <li className="inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-foreground after:-bottom-2 after:left-0 after:transform after:scale-x-0 after:transition-transform after:duration-250 after:ease-out hover:after:scale-x-100 after:origin-bottom-right hover:after:origin-bottom-left">
             <Link href={""} className="flex gap-1.75 items-center">
               <Image
                 height={25}
@@ -24,17 +24,17 @@ const Navbar = () => {
                 src="/icons/track-icon.svg"
                 alt=""
               />
-              <span>Track</span>
+              <span className="">Track</span>
             </Link>
           </li>
-          <li>
+          <li className="inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-foreground after:-bottom-2 after:left-0 after:transform after:scale-x-0 after:transition-transform after:duration-250 after:ease-out hover:after:scale-x-100 after:origin-bottom-right hover:after:origin-bottom-left">
             <Link href="/flights" className="flex gap-1.75 items-center">
               <Image height={28} width={28} src="/icons/airplane.svg" alt="" />
               <span>Search</span>
             </Link>
           </li>
-          <li>
-            {isSignedIn ? (
+          {isSignedIn ? (
+            <li>
               <Link
                 href={""}
                 className="flex gap-1.75 items-center"
@@ -48,7 +48,9 @@ const Navbar = () => {
                   className="rounded-full"
                 />
               </Link>
-            ) : (
+            </li>
+          ) : (
+            <li className="inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-foreground after:-bottom-2 after:left-0 after:transform after:scale-x-0 after:transition-transform after:duration-250 after:ease-out hover:after:scale-x-100 after:origin-bottom-right hover:after:origin-bottom-left">
               <Link href={""} className="flex gap-1.75 items-center">
                 <Image
                   height={23}
@@ -58,8 +60,8 @@ const Navbar = () => {
                 />
                 <span>Log in</span>
               </Link>
-            )}
-          </li>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

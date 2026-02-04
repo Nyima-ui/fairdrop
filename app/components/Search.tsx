@@ -7,7 +7,7 @@ const Search = () => {
       aria-label="Flight search"
       className="flex bg-input-background px-1.25 py-1.75 gap-3 mt-15 rounded-lg w-full flex-wrap max-sm:mt-14 justify-center"
     >
-      <div className="flex gap-5">
+      <div className="flex gap-4">
         <div>
           <label htmlFor="origin" className="sr-only">
             Origin
@@ -18,7 +18,7 @@ const Search = () => {
             placeholder="From"
             name="origin"
             required
-            className="border border-input-border p-2.5 rounded-sm w-full"
+            className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs"
           />
         </div>
 
@@ -40,7 +40,7 @@ const Search = () => {
             placeholder="To"
             name="destination"
             required
-            className="border border-input-border p-2.5 rounded-sm w-full"
+            className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs"
           />
         </div>
       </div>
@@ -57,13 +57,13 @@ const Search = () => {
             name="departure"
             required
             defaultValue={new Date().toISOString().split("T")[0]}
-            className="border border-input-border p-2.5 rounded-sm cursor-pointer date scheme-dark min-w-0 flex-1 w-full"
+            className="border-2 border-input-border p-2.5 rounded-sm cursor-pointer date scheme-dark min-w-0 flex-1 w-full focus:border-primary outline-none focus:ring-primary shadow-xs"
           />
         </div>
 
         <button
           type="submit"
-          className="bg-primary font-medium px-5 py-3 rounded-sm cursor-pointer flex-1 block max-w-[400px]"
+          className="bg-primary font-medium px-5 py-3 rounded-sm cursor-pointer flex-1 block max-w-100 hover:scale-103 transition-all duration-150 ease-in hover:shadow-xs hover:shadow-primary"
         >
           Search
         </button>
