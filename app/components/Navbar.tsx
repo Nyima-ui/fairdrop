@@ -51,7 +51,7 @@ const Navbar = () => {
             </li>
           ) : (
             <li className="inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-foreground after:-bottom-2 after:left-0 after:transform after:scale-x-0 after:transition-transform after:duration-250 after:ease-out hover:after:scale-x-100 after:origin-bottom-right hover:after:origin-bottom-left">
-              <Link href={""} className="flex gap-1.75 items-center">
+              <Link href="/sign-in" className="flex gap-1.75 items-center">
                 <Image
                   height={23}
                   width={23}
