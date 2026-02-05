@@ -1,6 +1,6 @@
 function SetAlertForm() {
   return (
-    <form className="max-w-1/2 bg-input-background rounded-lg px-5.75 py-8.5 text-lg flex flex-col gap-10 mt-5" aria-labelledby="form-title">
+    <form className="bg-input-background rounded-lg px-5.75 py-8.5 text-lg flex flex-col gap-10 mt-5 w-full" aria-labelledby="form-title">
       <h2 id="form-title" className="sr-only">Set Price Alert</h2>
       <fieldset>
         <legend>When are you flying?</legend>
@@ -13,7 +13,7 @@ function SetAlertForm() {
               name="earliest-date"
               required
               aria-required="true"
-              className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer  text-foreground/80"
+              className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer mt-1 text-foreground/80"
             />
           </div>
           <div className="flex flex-col gap-1.25 flex-1">
@@ -22,7 +22,7 @@ function SetAlertForm() {
               type="date"
               id="latest-date"
               name="latest-date"
-              className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer text-foreground/80"
+              className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer mt-1 text-foreground/80"
             />
           </div>
         </div>
@@ -86,7 +86,7 @@ function SetAlertForm() {
         </div>
       </fieldset>
 
-      <button type="submit" className="bg-primary font-medium px-5 py-3 rounded-sm cursor-pointer flex-1 block max-w-100  transition-all duration-150 ease-in hover:bg-btn-hover self-start">
+      <button type="submit" className="bg-primary font-medium px-5 max-sm:px-3 py-3 max-sm:py-2 rounded-sm cursor-pointer flex-1 block max-w-100  transition-all duration-150 ease-in hover:bg-btn-hover self-start">
         Create my alert
       </button>
     </form>
