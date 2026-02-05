@@ -17,14 +17,14 @@ const Navbar = () => {
         </Link>
         <ul className="flex gap-3.75 sm:gap-11.25 items-center shrink-0">
           <li className="inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-foreground after:-bottom-2 after:left-0 after:transform after:scale-x-0 after:transition-transform after:duration-250 after:ease-out hover:after:scale-x-100 after:origin-bottom-right hover:after:origin-bottom-left">
-            <Link href={""} className="flex gap-1.75 items-center">
+            <Link href="/alerts" className="flex gap-1.75 items-center">
               <Image
                 height={25}
                 width={25}
                 src="/icons/track-icon.svg"
                 alt=""
               />
-              <span className="">Track</span>
+              <span>Track</span>
             </Link>
           </li>
           <li className="inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-foreground after:-bottom-2 after:left-0 after:transform after:scale-x-0 after:transition-transform after:duration-250 after:ease-out hover:after:scale-x-100 after:origin-bottom-right hover:after:origin-bottom-left">

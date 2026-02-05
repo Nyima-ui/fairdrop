@@ -63,14 +63,14 @@ const Search = () => {
 
         <button
           type="submit"
-          className="bg-primary font-medium px-5 py-3 rounded-sm cursor-pointer flex-1 block max-w-100 hover:scale-103 transition-all duration-150 ease-in hover:shadow-xs hover:shadow-primary"
+          className="bg-primary font-medium px-5 py-3 rounded-sm cursor-pointer flex-1 block max-w-100 transition-all duration-150 ease-in hover:bg-btn-hover"
         >
           Search
         </button>
       </div>
-
     </form>
   );
 };
 
 export default Search;
+// hover:scale-103

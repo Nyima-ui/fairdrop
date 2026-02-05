@@ -5,6 +5,7 @@
   --foreground: oklch(94% 0.01 247);
   --input-background: oklch(18% 0.01 247);
   --primary: oklch(45% 0.17 260);
+  --btn-hover: oklch(26% 0.14 265.6);
   --input-border: oklch(89.47% 0.01 207.2 / 20%);
   --placeholder-foreground: oklch(89.47% 0.01 207.2 / 60%);
   --radius: 5px;
@@ -18,16 +19,24 @@
   --color-primary: var(--primary);
   --color-input-border: var(--input-border);
   --color-placeholder-foreground: var(--placeholder-foreground);
+  --color-btn-hover: var(--btn-hover);
   --radius-sm: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
+  --text-lg: 19px;
   --text-4xl: 27px;
   --text-5xl: 47px;
   --breakpoint-xs: 480px;
 }
-input.dark{
+input.dark {
   color-scheme: dark;
 }
-abbr[title]{
+abbr[title] {
   text-decoration: none;
   cursor: help;
+}
+
+input[number]::-webkit-outer-spin-button,
+input[number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* Sometimes needed to remove spacing */
 }
