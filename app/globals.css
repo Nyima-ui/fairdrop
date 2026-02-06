@@ -6,6 +6,7 @@
   --input-background: oklch(18% 0.01 247);
   --primary: oklch(45% 0.17 260);
   --btn-hover: oklch(26% 0.14 265.6);
+  --btn-loading: oklch(35% 0.12 260);
   --input-border: oklch(89.47% 0.01 207.2 / 20%);
   --placeholder-foreground: oklch(89.47% 0.01 207.2 / 60%);
   --radius: 5px;
@@ -20,6 +21,7 @@
   --color-input-border: var(--input-border);
   --color-placeholder-foreground: var(--placeholder-foreground);
   --color-btn-hover: var(--btn-hover);
+  --color-btn-loading: var(--btn-loading);
   --radius-sm: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --text-lg: 19px;

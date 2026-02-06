@@ -2,10 +2,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useAuth } from "@/context/AuthContext";
+import { supabase } from "@/lib/supabase/client";
 
-//chat gpt write the alt text for me
 const Navbar = () => {
-  const [isSignedIn, setisSignedIn] = useState(false);
+  const [isSigningOut, setIsSigningOut] = useState(false);
+  const { user } = useAuth();
+  async function handleSignOut() {
+    try {
+      setIsSigningOut(true);
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+    } catch (error) {
+      console.error("Error signing out", error);
+    } finally {
+      setIsSigningOut(false);
+    }
+  }
   return (
     <header>
       <nav
@@ -33,21 +46,15 @@ const Navbar = () => {
               <span>Search</span>
             </Link>
           </li>
-          {isSignedIn ? (
-            <li>
-              <Link
-                href={""}
-                className="flex gap-1.75 items-center"
-                aria-label="Account menu"
-              >
-                <Image
-                  height={40}
-                  width={40}
-                  src="/Avatar3.png"
-                  alt=""
-                  className="rounded-full"
-                />
-              </Link>
+          {user ? (
+            <li className="inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-foreground after:-bottom-2 after:left-0 after:transform after:scale-x-0 after:transition-transform after:duration-250 after:ease-out hover:after:scale-x-100 after:origin-bottom-right hover:after:origin-bottom-left">
+              <button className="cursor-pointer" onClick={handleSignOut}>
+                {isSigningOut ? (
+                  <span className="inline-block size-7 border-3 rounded-full border-b-transparent animate-spin"></span>
+                ) : (
+                  "Log out"
+                )}
+              </button>
             </li>
           ) : (
             <li className="inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-foreground after:-bottom-2 after:left-0 after:transform after:scale-x-0 after:transition-transform after:duration-250 after:ease-out hover:after:scale-x-100 after:origin-bottom-right hover:after:origin-bottom-left">
