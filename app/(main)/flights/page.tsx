@@ -1,5 +1,5 @@
-import FlightCard from "../components/FlightCard";
-import Search from "../components/Search";
+import FlightCard from "../../components/FlightCard";
+import Search from "../../components/Search";
 
 const FlightResultsPage = () => {
   return (
