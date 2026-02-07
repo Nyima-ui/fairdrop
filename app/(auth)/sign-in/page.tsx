@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 const AuthPage = () => {
   const [isSignIn, setIsSignIn] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const router = useRouter();
@@ -49,6 +50,25 @@ const AuthPage = () => {
       console.error("Authentication error:", (error as Error).message);
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function handleGoogleSignIn(e: React.MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("function call");
+    try {
+      setGoogleLoading(true);
+      setError(null);
+
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+      });
+      if (error) throw error;
+    } catch (error) {
+      setError((error as Error).message);
+      console.error("Google sign-in error", error);
+      setGoogleLoading(false);
     }
   }
 
@@ -160,7 +180,9 @@ const AuthPage = () => {
             <button
               type="button"
               aria-label="Sign up with Google"
-              className="max-w-110 py-3  font-medium px-5 rounded-sm cursor-pointer transition-all duration-150 ease-in flex items-center justify-center gap-3 border-input-border border hover:bg-[#161819] hover:border-transparent"
+              onClick={(e) => handleGoogleSignIn(e)}
+              // disabled={loading || googleLoading}
+              className="max-w-110 py-3 font-medium px-5 rounded-sm cursor-pointer transition-all duration-150 ease-in flex items-center justify-center gap-3 border-input-border border hover:bg-[#161819] hover:border-transparent"
             >
               <Image
                 height={27}
@@ -170,6 +192,9 @@ const AuthPage = () => {
                 aria-hidden="true"
               />
               <span>Google</span>
+              {googleLoading && (
+                <span className="size-6 border-3 border-white border-b-transparent rounded-full inline-block animate-spin"></span>
+              )}
             </button>
           </div>
         </form>
