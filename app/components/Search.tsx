@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   SearchDetails,
   Location,
@@ -23,6 +23,9 @@ const Search = () => {
     originIATA: "",
     destinationIATA: "",
   });
+
+  const originSuggestionRef = useRef<HTMLUListElement>(null);
+  const destinationSuggestionRef = useRef<HTMLUListElement>(null);
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
@@ -79,12 +82,28 @@ const Search = () => {
     setActiveField(null);
   }
 
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (!selectedCodes.originIATA) {
+      alert("Please select an origin airport from the suggestions");
+      return;
+    }
+    if (!selectedCodes.destinationIATA) {
+      alert("Please select a destination airport from the suggestions");
+      return;
+    }
+    if (!flightDetails.departure) {
+      alert("Please select a departure date");
+      return;
+    }
+  }
   useEffect(() => {
     // console.log(selectedCodes);
   }, [selectedCodes]);
 
   return (
     <form
+      onSubmit={handleSubmit}
       role="search"
       aria-label="Flight search"
       className="flex bg-input-background px-1.25 py-1.75 gap-3 mt-15 rounded-lg w-full flex-wrap max-sm:mt-14 justify-center"
@@ -112,6 +131,7 @@ const Search = () => {
           />
           {suggestion.length > 0 && activeField === "origin" && (
             <ul
+              ref={originSuggestionRef}
               className="absolute top-full left-0 min-w-91.25 bg-input-background p-3.75 space-y-4 shadow-custom"
               role="listbox"
               id="origin-suggestions"
@@ -190,6 +210,7 @@ const Search = () => {
           />
           {suggestion.length > 0 && activeField === "destination" && (
             <ul
+              ref={destinationSuggestionRef}
               className="absolute top-full left-0 min-w-91.25 bg-input-background p-3.75 space-y-4 shadow-custom"
               id="destination-suggestion"
               role="listbox"
