@@ -1,13 +1,7 @@
-function fetchData() {
-  return new Promise((resolve, reject) => {
+async function simulateDelay(ms: number = 300): Promise<void> {
+  return new Promise((resolve) => {
     setTimeout(() => {
-      const success = true;
-      if (success) resolve("Data fetched successfully!");
-      else reject("Error: Failed to fetch data");
-    }, 3000);
+      resolve();
+    }, ms);
   });
 }
-
-fetchData()
-  .then((data) => console.log(data))
-  .catch((error) => console.error(error));

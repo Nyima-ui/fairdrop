@@ -1,0 +1,70 @@
+[
+  {
+    "position": 1,
+    "name": "Leh",
+    "type": "city",
+    "id": "/m/02bnpk",
+    "airports": [
+      {
+        "name": "Kushok Bakula Rimpochee Airport",
+        "id": "IXL",
+        "city": "Leh",
+        "city_id": "/m/02bnpk",
+        "distance": "2 mi"
+      }
+    ]
+  },
+  {
+    "position": 2,
+    "name": "Lehigh Valley International Airport",
+    "description": "Airport in Lehigh County, Pennsylvania",
+    "id": "/m/02fmv9"
+  },
+  {
+    "position": 3,
+    "name": "Lehigh County, Pennsylvania",
+    "type": "city",
+    "description": "County in Pennsylvania",
+    "id": "/m/0mwl2",
+    "airports": [
+      {
+        "name": "Lehigh Valley International Airport",
+        "id": "ABE",
+        "city": "Allentown",
+        "city_id": "/m/0_3cs"
+      }
+    ]
+  },
+  {
+    "position": 4,
+    "name": "Lehi, Utah",
+    "type": "city",
+    "description": "City in Utah",
+    "id": "/m/010gsz",
+    "airports": [
+      {
+        "name": "Salt Lake City International Airport",
+        "id": "SLC",
+        "city": "Salt Lake City",
+        "city_id": "/m/0f2r6",
+        "distance": "28 mi"
+      }
+    ]
+  },
+  {
+    "position": 5,
+    "name": "Lehigh Acres, Florida",
+    "type": "city",
+    "description": "Census-designated place in Florida",
+    "id": "/m/01z_5l5",
+    "airports": [
+      {
+        "name": "Southwest Florida International Airport",
+        "id": "RSW",
+        "city": "Fort Myers",
+        "city_id": "/m/0rmby",
+        "distance": "10 mi"
+      }
+    ]
+  }
+]

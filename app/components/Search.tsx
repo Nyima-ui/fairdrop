@@ -1,13 +1,68 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+interface SearchDetails {
+  origin: string;
+  destination: string;
+  departure: string;
+}
 
 const Search = () => {
+  const [flightDetails, setFlightDetails] = useState<SearchDetails>({
+    origin: "",
+    destination: "",
+    departure: "",
+  });
+  const [activeField, setActiveField] = useState<
+    "origin" | "destination" | null
+  >(null);
+
+  function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = e.target;
+    setFlightDetails((prev) => ({ ...prev, [name]: value }));
+
+    if (name === "origin" || name === "destination") {
+      setActiveField(name);
+    }
+  }
+
+  useEffect(() => {
+    const debounceTimer = setTimeout(async () => {
+      const searchQuery =
+        activeField === "origin"
+          ? flightDetails.origin
+          : activeField === "destination"
+            ? flightDetails.destination
+            : "";
+
+      if (!searchQuery && !activeField) return;
+
+      try {
+        const response = await fetch("/api/autocomplete", {
+          method: "POST",
+          body: JSON.stringify({ searchQuery }),
+          headers: { "Content-Type": "application/json" },
+        });
+        if (!response.ok) {
+          throw new Error("Failed to fetch autocomplete data.");
+        }
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error("Error fetching autocomplete data", error);
+      }
+    }, 300);
+    return () => clearTimeout(debounceTimer);
+  }, [flightDetails.origin, flightDetails.destination, activeField]);
+
   return (
     <form
       role="search"
       aria-label="Flight search"
       className="flex bg-input-background px-1.25 py-1.75 gap-3 mt-15 rounded-lg w-full flex-wrap max-sm:mt-14 justify-center"
     >
-      <div className="flex gap-4">
+      <div className="flex gap-4 items-center">
         <div>
           <label htmlFor="origin" className="sr-only">
             Origin
@@ -19,6 +74,8 @@ const Search = () => {
             name="origin"
             required
             className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs"
+            value={flightDetails.origin}
+            onChange={handleInputChange}
           />
         </div>
 
@@ -28,6 +85,7 @@ const Search = () => {
           src="/icons/back-forth-icon.svg"
           alt="Swap origin and destination"
           role="img"
+          className="size-6"
         />
 
         <div>
@@ -41,6 +99,8 @@ const Search = () => {
             name="destination"
             required
             className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs"
+            value={flightDetails.destination}
+            onChange={handleInputChange}
           />
         </div>
       </div>
@@ -56,8 +116,9 @@ const Search = () => {
             placeholder="Departure"
             name="departure"
             required
-            defaultValue={new Date().toISOString().split("T")[0]}
             className="border-2 border-input-border p-2.5 rounded-sm cursor-pointer date scheme-dark min-w-0 flex-1 w-full focus:border-primary outline-none focus:ring-primary shadow-xs"
+            value={flightDetails.departure}
+            onChange={handleInputChange}
           />
         </div>
 
