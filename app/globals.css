@@ -28,6 +28,8 @@
   --text-4xl: 27px;
   --text-5xl: 47px;
   --breakpoint-xs: 480px;
+
+  --shadow-custom: 0 0 4px rgba(105, 105, 105, 0.53);
 }
 input.dark {
   color-scheme: dark;
@@ -39,7 +41,6 @@ abbr[title] {
 
 input[number]::-webkit-outer-spin-button,
 input[number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0; /* Sometimes needed to remove spacing */
+  -webkit-appearance: none;
+  margin: 0; /* Sometimes needed to remove spacing */
 }
-

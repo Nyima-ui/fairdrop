@@ -273,7 +273,7 @@ export async function POST(request: NextRequest) {
     }
 
     await simulateDelay(500);
-    return NextResponse.json({ success: true, data: data.suggestions });
+    return NextResponse.json({ success: true, data: data2.suggestions });
   } catch (error) {
     console.error("Autocomplete API error", error);
     return NextResponse.json({
