@@ -1,25 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-
-export interface FlightProps {
-  arrival: string;
-  departure: string;
-  duration: string;
-  name: string;
-  price: string;
-  stops: number | string;
-}
-
-export interface FlightCardProps {
-  destination: string;
-  origin: string;
-  flight: FlightProps;
-}
+import { FlightCardProps } from "@/types/component";
 
 function formatPrice(price: string): string {
   const flightPrice = Number(price.split("$")[1]);
   const inr = Math.round(flightPrice * 90.66);
-  return `₹${inr.toLocaleString('en-IN')}`;
+  return `₹${inr.toLocaleString("en-IN")}`;
 }
 
 const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
@@ -30,9 +16,11 @@ const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
           <Image
             height={45}
             width={45}
-            //change this later
-            alt="SpiceJet Airline logo"
-            src="/spicejet.png"
+            alt={`${flight.name} logo`}
+            src={
+              flight.airline_logo ??
+              "https://images.kiwi.com/airlines/64x64/airlines.png"
+            }
             className="rounded-sm"
           />
           <p>{flight.name}</p>
@@ -55,12 +43,12 @@ const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
         <div className="flex w-67.25 justify-between items-center gap-4.25">
           <div>
             <p>
-              {/* change this later */}
-              <time dateTime="08:55">{flight.departure.split(" on ")[0]}</time>
+              <time dateTime={flight.departure.split(" on ")[0]}>
+                {flight.departure.split(" on ")[0]}
+              </time>
             </p>
             <p className="text-right">
-              {/* change this later */}
-              <abbr title="Delhi" style={{ textDecoration: "none" }}>
+              <abbr title={origin} style={{ textDecoration: "none" }}>
                 {origin}
               </abbr>
             </p>
@@ -71,12 +59,12 @@ const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
           ></div>
           <div>
             <p>
-              {/* change this later  */}
-              <time dateTime="14:20">{flight.arrival.split(" on ")[0]}</time>
+              <time dateTime={flight.arrival.split(" on ")[0]}>
+                {flight.arrival.split(" on ")[0]}
+              </time>
             </p>
-            {/* change this later  */}
             <p>
-              <abbr title="Leh" style={{ textDecoration: "none" }}>
+              <abbr title={destination} style={{ textDecoration: "none" }}>
                 {destination}
               </abbr>
             </p>
@@ -86,7 +74,6 @@ const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
         <div>
           <p>
             <span className="sr-only">Price:</span>
-            {/* change this later */}
             <span aria-label={formatPrice(flight.price)}>
               {formatPrice(flight.price)}
             </span>
@@ -112,22 +99,24 @@ const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
           <Image
             height={30}
             width={30}
-            // change this later
-            alt="SpiceJet Airline logo"
-            src="/spicejet.png"
+            alt={`${flight.name} logo`}
+            src={
+              flight.airline_logo ??
+              "https://images.kiwi.com/airlines/64x64/airlines.png"
+            }
             className="rounded-sm self-center"
           />
 
           <div className="flex w-63.75 items-center gap-3">
             <div>
               <p>
-                {/* change this later */}
-                <time dateTime="08:55">8:55 AM</time>
+                <time dateTime={flight.departure.split(" on ")[0]}>
+                  {flight.departure.split(" on ")[0]}
+                </time>
               </p>
               <p className="text-right">
-                {/* change this later */}
-                <abbr title="Delhi" className="no-underline">
-                  DEL
+                <abbr title={origin} className="no-underline">
+                  {origin}
                 </abbr>
               </p>
             </div>
@@ -137,13 +126,13 @@ const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
             ></div>
             <div>
               <p>
-                {/* change this later  */}
-                <time dateTime="14:20">2:20 PM</time>
+                <time dateTime={flight.arrival.split(" on ")[0]}>
+                  {flight.arrival.split(" on ")[0]}
+                </time>
               </p>
-              {/* change this later  */}
               <p>
-                <abbr title="Leh" className="no-underline">
-                  IXL
+                <abbr title={destination} className="no-underline">
+                  {destination}
                 </abbr>
               </p>
             </div>
@@ -151,7 +140,6 @@ const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
 
           <p className="self-center">
             <span className="sr-only">Price:</span>
-            {/* change this later */}
             <span
               aria-label={formatPrice(flight.price)}
               className="text-nowrap"
@@ -164,15 +152,15 @@ const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
         <dl className="text-base max-sm:text-[14px] text-foreground/70 flex justify-between items-baseline">
           <div>
             <dt className="sr-only">Airline:</dt>
-            <dd>Air India</dd>
+            <dd>{flight.name}</dd>
           </div>
           <div>
             <dt className="sr-only">Duration:</dt>
-            <dd>1 hr 20 min</dd>
+            <dd>{flight.duration}</dd>
           </div>
           <div>
             <dt className="sr-only">Flight type:</dt>
-            <dd>Nonstop</dd>
+            <dd>{flight.stops === 0 ? "Nonstop" : `${flight.stops} stop`}</dd>
           </div>
           <div>
             <Link

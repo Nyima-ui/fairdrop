@@ -3,16 +3,23 @@ import FlightCard from "../../components/FlightCard";
 import Search from "../../components/Search";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { FlightProps } from "@/types/component";
+
+interface FlightResults {
+  origin: string;
+  destination: string;
+  flights: FlightProps[];
+}
 
 const FlightResults = () => {
   const searchParams = useSearchParams();
-  const [flights, setFlights] = useState({
+  const [flights, setFlights] = useState<FlightResults>({
     origin: "",
     destination: "",
     flights: [],
   });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchFlights() {
@@ -34,6 +41,7 @@ const FlightResults = () => {
 
       try {
         setLoading(true);
+        setError(null);
         const resonse = await fetch("/api/search", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -45,7 +53,18 @@ const FlightResults = () => {
         });
 
         const data = await resonse.json();
-        setFlights(data.flights);
+        if (data && data.flights) {
+          setFlights(data.flights);
+        } else {
+          setError(
+            "We couldn't find flights for this route. Our search works best with direct flights between major airports.",
+          );
+          setFlights({
+            origin: "",
+            destination: "",
+            flights: [],
+          });
+        }
       } catch (error) {
         console.error("Error fetching flights data", error);
         setError(error instanceof Error ? error.message : "Please try again.");
@@ -59,14 +78,17 @@ const FlightResults = () => {
   useEffect(() => {
     console.log(flights);
   }, [flights]);
+
   return (
     <div>
       <div className="max-w-211.5 mx-auto">
         <Search />
       </div>
       <main className="mt-15 max-sm:mt-11.25 mx-auto max-w-265.5">
-        <h1 className="text-4xl">Google flights results:</h1>
-        {error && <p>Error fetching flights data. Please try again</p>}
+        <h1 className="text-4xl">
+          Flights flying on {flights.flights[0]?.departure.split(" on ")[1]}
+        </h1>
+        {error && <p className="text-red-500 mt-5">{error}</p>}
         {loading ? (
           <div className="flex justify-center mt-5">
             <span className="size-6 border-3 border-white border-b-transparent rounded-full inline-block animate-spin"></span>
