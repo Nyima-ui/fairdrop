@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import {
   SearchDetails,
   Location,
@@ -11,7 +11,7 @@ import Flying from "./svgs/Flying";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 
-const Search = () => {
+const SearchComponent = () => {
   const [flightDetails, setFlightDetails] = useState<SearchDetails>({
     origin: "",
     destination: "",
@@ -328,5 +328,18 @@ const Search = () => {
   );
 };
 
+const Search = () => {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex justify-center mt-5">
+          <span className="size-6 border-3 border-white border-b-transparent rounded-full inline-block animate-spin"></span>
+        </div>
+      }
+    >
+      <SearchComponent />
+    </Suspense>
+  );
+};
+
 export default Search;
-// hover:scale-103

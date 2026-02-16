@@ -1,4 +1,3 @@
-import React from "react";
 import Search from "../../components/Search";
 import SetAlertForm from "../../components/SetAlertForm";
 import ActiveAlerts from "../../components/ActiveAlerts";

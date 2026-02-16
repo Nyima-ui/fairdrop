@@ -1,10 +1,10 @@
 "use client";
 import FlightCard from "../../components/FlightCard";
 import Search from "../../components/Search";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-const FlightResultsPage = () => {
+const FlightResults = () => {
   const searchParams = useSearchParams();
   const [flights, setFlights] = useState({
     origin: "",
@@ -22,7 +22,9 @@ const FlightResultsPage = () => {
 
       if (!origin || !destination || !date) return;
       if (origin === destination) {
-        alert("Origin and destination cannot be the same. Please choose different locations.");
+        alert(
+          "Origin and destination cannot be the same. Please choose different locations.",
+        );
         return;
       }
       if (new Date(date) < new Date()) {
@@ -87,6 +89,20 @@ const FlightResultsPage = () => {
         )}
       </main>
     </div>
+  );
+};
+
+const FlightResultsPage = () => {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex justify-center mt-5">
+          <span className="size-6 border-3 border-white border-b-transparent rounded-full inline-block animate-spin"></span>
+        </div>
+      }
+    >
+      <FlightResults />
+    </Suspense>
   );
 };
 
