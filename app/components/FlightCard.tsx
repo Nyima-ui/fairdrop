@@ -1,11 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const FlightCard = () => {
+export interface FlightProps {
+  arrival: string;
+  departure: string;
+  duration: string;
+  name: string;
+  price: string;
+  stops: number | string;
+}
+
+export interface FlightCardProps {
+  destination: string;
+  origin: string;
+  flight: FlightProps;
+}
+
+function formatPrice(price: string): string {
+  const flightPrice = Number(price.split("$")[1]);
+  const inr = Math.round(flightPrice * 90.66);
+  return `₹${inr.toLocaleString('en-IN')}`;
+}
+
+const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
   return (
-    <li>
+    <li className="mb-5">
       <div className="bg-input-background flex px-8 py-3 justify-between items-center font-light rounded-sm max-lg:hidden">
-        <div className="flex flex-col items-center gap-0.5">
+        <div className="flex flex-col gap-0.5">
           <Image
             height={45}
             width={45}
@@ -14,18 +35,20 @@ const FlightCard = () => {
             src="/spicejet.png"
             className="rounded-sm"
           />
-          <p>Spice Jet</p>
+          <p>{flight.name}</p>
         </div>
 
         <div>
           <p>
-            <span className="sr-only">Duration:</span>1 hr 20 min
+            <span className="sr-only">Duration:</span>
+            {flight.duration}
           </p>
         </div>
 
         <div>
           <p>
-            <span className="sr-only">Flight type:</span>Nonstop
+            <span className="sr-only">Flight type:</span>
+            {flight.stops === 0 ? "Nonstop" : `${flight.stops} stop`}
           </p>
         </div>
 
@@ -33,12 +56,12 @@ const FlightCard = () => {
           <div>
             <p>
               {/* change this later */}
-              <time dateTime="08:55">8:55 AM</time>
+              <time dateTime="08:55">{flight.departure.split(" on ")[0]}</time>
             </p>
             <p className="text-right">
               {/* change this later */}
               <abbr title="Delhi" style={{ textDecoration: "none" }}>
-                DEL
+                {origin}
               </abbr>
             </p>
           </div>
@@ -49,12 +72,12 @@ const FlightCard = () => {
           <div>
             <p>
               {/* change this later  */}
-              <time dateTime="14:20">2:20 PM</time>
+              <time dateTime="14:20">{flight.arrival.split(" on ")[0]}</time>
             </p>
             {/* change this later  */}
             <p>
               <abbr title="Leh" style={{ textDecoration: "none" }}>
-                IXL
+                {destination}
               </abbr>
             </p>
           </div>
@@ -64,9 +87,15 @@ const FlightCard = () => {
           <p>
             <span className="sr-only">Price:</span>
             {/* change this later */}
-            <span aria-label="12,023 rupees">₹ 12,023</span>
+            <span aria-label={formatPrice(flight.price)}>
+              {formatPrice(flight.price)}
+            </span>
           </p>
-          <Link href="#" className="flex gap-1.25">
+          <Link
+            href="https://www.google.com/travel/flights?gl=IN&hl=en"
+            target="_blank"
+            className="flex gap-1.25"
+          >
             <span>View in Google flights</span>
             <Image
               height={15}
@@ -123,8 +152,11 @@ const FlightCard = () => {
           <p className="self-center">
             <span className="sr-only">Price:</span>
             {/* change this later */}
-            <span aria-label="12,023 rupees" className="text-nowrap">
-              ₹ 12,023
+            <span
+              aria-label={formatPrice(flight.price)}
+              className="text-nowrap"
+            >
+              {formatPrice(flight.price)}
             </span>
           </p>
         </div>
@@ -143,13 +175,14 @@ const FlightCard = () => {
             <dd>Nonstop</dd>
           </div>
           <div>
-            <Link href="#">
+            <Link
+              href="https://www.google.com/travel/flights?gl=IN&hl=en"
+              target="_blank"
+            >
               Google flights <span className="sr-only">(opens in new tab)</span>
             </Link>
           </div>
         </dl>
-
-
       </div>
     </li>
   );

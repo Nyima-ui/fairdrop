@@ -8,6 +8,8 @@ import {
 } from "@/types/autocomplete";
 import LocationPin from "./svgs/LocationPin";
 import Flying from "./svgs/Flying";
+import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 const Search = () => {
   const [flightDetails, setFlightDetails] = useState<SearchDetails>({
@@ -20,9 +22,11 @@ const Search = () => {
   >(null);
   const [suggestion, setSuggestion] = useState<Location[]>([]);
   const [selectedCodes, setSelectedCodes] = useState({
-    originIATA: "",
-    destinationIATA: "",
+    originIATA: "GAY",
+    destinationIATA: "DEL",
   });
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
   const originSuggestionRef = useRef<HTMLUListElement>(null);
   const destinationSuggestionRef = useRef<HTMLUListElement>(null);
@@ -82,24 +86,66 @@ const Search = () => {
     setActiveField(null);
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!selectedCodes.originIATA) {
-      alert("Please select an origin airport from the suggestions");
-      return;
-    }
-    if (!selectedCodes.destinationIATA) {
-      alert("Please select a destination airport from the suggestions");
-      return;
-    }
-    if (!flightDetails.departure) {
-      alert("Please select a departure date");
-      return;
+    // if (!selectedCodes.originIATA) {
+    //   alert("Please select an origin airport from the suggestions.");
+    //   return;
+    // }
+    // if (!selectedCodes.destinationIATA) {
+    //   alert("Please select a destination airport from the suggestions.");
+    //   return;
+    // }
+    // if (!flightDetails.departure) {
+    //   alert("Please select a departure date.");
+    //   return;
+    // }
+
+    try {
+      const params = new URLSearchParams({
+        // origin: selectedCodes.originIATA,
+        origin: flightDetails.origin,
+        // destination: selectedCodes.destinationIATA,
+        destination: flightDetails.destination,
+        date: flightDetails.departure,
+      });
+      router.push(`/flights/?${params.toString()}`);
+    } catch (error) {
+      console.error("Error fetching flight details", error);
     }
   }
   useEffect(() => {
     // console.log(selectedCodes);
   }, [selectedCodes]);
+
+  useEffect(() => {
+    function handleClickOutSide(e: MouseEvent) {
+      const target = e.target as Node;
+      if (
+        !originSuggestionRef.current?.contains(target) &&
+        !destinationSuggestionRef.current?.contains(target)
+      ) {
+        setSuggestion([]);
+        setActiveField(null);
+      }
+    }
+    document.addEventListener("click", handleClickOutSide);
+    return () => document.removeEventListener("click", handleClickOutSide);
+  }, []);
+
+  useEffect(() => {
+    const origin = searchParams.get("origin");
+    const destination = searchParams.get("destination");
+    const date = searchParams.get("date");
+
+    if (origin || destination || date) {
+      setFlightDetails({
+        origin: origin || "",
+        destination: destination || "",
+        departure: date || "",
+      });
+    }
+  }, [searchParams]);
 
   return (
     <form
@@ -118,7 +164,7 @@ const Search = () => {
             type="text"
             placeholder="From"
             name="origin"
-            required
+            // required
             className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs"
             autoComplete="off"
             value={flightDetails.origin}
@@ -157,12 +203,12 @@ const Search = () => {
                           tabIndex={0}
                           key={airport.id}
                           className="cursor-pointer flex items-center py-2.5 pl-7.5 gap-2.5 hover:bg-background rounded-sm"
-                          onClick={() =>
-                            handleSelect({
-                              locationName: loc.name,
-                              iata: airport.id,
-                            })
-                          }
+                          // onClick={() =>
+                          //   handleSelect({
+                          //     locationName: loc.name,
+                          //     iata: airport.id,
+                          //   })
+                          // }
                         >
                           <Flying aria-hidden="true" />
                           <span className="whitespace-nowrap">
@@ -190,14 +236,14 @@ const Search = () => {
 
         <div className="relative max-sm:static">
           <label htmlFor="destination" className="sr-only">
-            Destination date
+            Destination
           </label>
           <input
             id="destination"
             type="text"
             placeholder="To"
             name="destination"
-            required
+            // required
             className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs"
             autoComplete="off"
             value={flightDetails.destination}
@@ -231,12 +277,12 @@ const Search = () => {
                         <li
                           key={airport.id}
                           className="cursor-pointer flex items-center py-2.5 pl-7.5 gap-2.5 hover:bg-background rounded-sm"
-                          onClick={() =>
-                            handleSelect({
-                              locationName: loc.name,
-                              iata: airport.id,
-                            })
-                          }
+                          // onClick={() =>
+                          //   handleSelect({
+                          //     locationName: loc.name,
+                          //     iata: airport.id,
+                          //   })
+                          // }
                         >
                           <Flying aria-hidden="true" />
                           <span className="whitespace-nowrap">
@@ -255,7 +301,7 @@ const Search = () => {
       </div>
 
       <div className="flex flex-1 gap-5  justify-center">
-        <div className="max-sm:w-46.25">
+        <div className="max-sm:w-46.25 ">
           <label htmlFor="departure" className="sr-only">
             Departure
           </label>
@@ -273,7 +319,7 @@ const Search = () => {
 
         <button
           type="submit"
-          className="bg-primary font-medium px-5 py-3 rounded-sm cursor-pointer flex-1 block max-w-100 transition-all duration-150 ease-in hover:bg-btn-hover"
+          className="bg-primary font-medium px-5 py-3 rounded-sm cursor-pointer flex-1 max-w-100 transition-all duration-150 ease-in hover:bg-btn-hover flex items-center gap-2 disabled:cursor-auto disabled:bg-btn-hover"
         >
           Search
         </button>

@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
 
 const data = {
   search_metadata: {
@@ -197,30 +195,6 @@ const data2 = {
     },
   ],
 };
-
-async function saveData(data) {
-  try {
-    console.log(data);
-    const dataDir = path.join(process.cwd(), "data");
-    const filePath = path.join(dataDir, "autocomplete.json");
-
-    await fs.mkdir(dataDir, { recursive: true });
-    const jsonContent = JSON.stringify(data, null, 2);
-    await fs.writeFile(filePath, jsonContent, "utf-8");
-  } catch (error) {
-    console.error("Error saving data", error);
-  }
-}
-
-export async function GET(request: NextRequest) {
-  try {
-    const API_KEY = process.env.SERP_API_KEY;
-    return NextResponse.json({ status: "ok" });
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json({ message: "error" }, { status: 500 });
-  }
-}
 
 async function simulateDelay(ms: number = 300) {
   return new Promise((resolve) => setTimeout(resolve, ms));
