@@ -4,7 +4,11 @@ import { supabase } from "@/lib/supabase/client";
 import { useRef, useState } from "react";
 import { FormDataProps } from "@/types/component";
 
-function SetAlertForm() {
+interface SetAlertFormProps {
+  fetchActiveAlerts: () => Promise<void>;
+}
+
+function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -23,6 +27,7 @@ function SetAlertForm() {
         max_price: alertData.maxPrice,
       });
       if (error) throw error;
+      fetchActiveAlerts();
     } catch (error) {
       console.error("Error inserting alert data", error);
       setError(

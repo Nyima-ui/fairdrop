@@ -24,32 +24,33 @@ const AlertSettingPage = () => {
   const [loading, setLoading] = useState(false);
   const { user } = useAuth();
 
-  useEffect(() => {
-    async function fetchActiveAlerts() {
-      try {
-        if (!user) return;
-        const userId = user.id;
+  async function fetchActiveAlerts() {
+    try {
+      if (!user) return;
+      const userId = user.id;
 
-        setLoading(true);
-        setError(null);
-        const { data, error } = await supabase
-          .from("price_alerts")
-          .select("*")
-          .eq("user_id", userId);
+      setLoading(true);
+      setError(null);
+      const { data, error } = await supabase
+        .from("price_alerts")
+        .select("*")
+        .eq("user_id", userId);
 
-        if (error) throw error;
-        setActiveAlerts(data);
-      } catch (error) {
-        console.error("Error fetching active alerts", error);
-        setError(
-          error instanceof Error
-            ? error.message
-            : "Error fetching active alerts.",
-        );
-      } finally {
-        setLoading(false);
-      }
+      if (error) throw error;
+      setActiveAlerts(data);
+    } catch (error) {
+      console.error("Error fetching active alerts", error);
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Error fetching active alerts.",
+      );
+    } finally {
+      setLoading(false);
     }
+  }
+
+  useEffect(() => {
     fetchActiveAlerts();
   }, [user]);
   return (
@@ -60,7 +61,7 @@ const AlertSettingPage = () => {
       <main className="max-w-7xl mx-auto py-15 max-sm:py-11.25 flex justify-between gap-7.5 max-md:flex-col">
         <div className="">
           <h1 className="text-4xl">Setup your price alert</h1>
-          <SetAlertForm />
+          <SetAlertForm fetchActiveAlerts={fetchActiveAlerts} />
         </div>
         <div className="max-w-118.75 flex-1">
           <h2 className="text-4xl">Your active alerts</h2>
