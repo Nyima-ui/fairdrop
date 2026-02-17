@@ -13,3 +13,12 @@ export interface FlightCardProps {
   origin: string;
   flight: FlightProps;
 }
+
+export interface FormDataProps {
+  userId: string;
+  origin: string;
+  destination: string;
+  startDate: string;
+  endDate: string;
+  maxPrice: string;
+}

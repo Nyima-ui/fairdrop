@@ -4,9 +4,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isSigningOut, setIsSigningOut] = useState(false);
+  const router = useRouter()
   const { user } = useAuth();
   async function handleSignOut() {
     try {
@@ -17,6 +19,7 @@ const Navbar = () => {
       console.error("Error signing out", error);
     } finally {
       setIsSigningOut(false);
+      router.push("/")
     }
   }
   return (

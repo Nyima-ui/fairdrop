@@ -1,7 +1,84 @@
+"use client";
+import { useAuth } from "@/context/AuthContext";
+import { supabase } from "@/lib/supabase/client";
+import { useRef, useState } from "react";
+import { FormDataProps } from "@/types/component";
+
 function SetAlertForm() {
+  const { user } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  async function insertAlertRow(alertData: FormDataProps) {
+    try {
+      setLoading(true);
+      setError(null);
+      const { error } = await supabase.from("price_alerts").insert({
+        user_id: alertData.userId,
+        origin: alertData.origin,
+        destination: alertData.destination,
+        start_date: alertData.startDate,
+        end_date: alertData.endDate,
+        max_price: alertData.maxPrice,
+      });
+      if (error) throw error;
+    } catch (error) {
+      console.error("Error inserting alert data", error);
+      setError(
+        error instanceof Error
+          ? error.message
+          : "An error occured. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+      formRef.current?.reset();
+    }
+  }
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    if (!user) return;
+    const userId = user.id;
+    const origin = formData.get("origin") as string;
+    const destination = formData.get("destination") as string;
+    const startDate = formData.get("earliest-date") as string;
+    const endDate = formData.get("latest-date") as string;
+    const maxPrice = formData.get("alert-price") as string;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    if (new Date(startDate) < today) {
+      alert("Earliest date can't be in the past.");
+      return;
+    }
+    if (new Date(endDate) < new Date(startDate)) {
+      alert("Latest date can't be before the earliest date.");
+      return;
+    }
+
+    await insertAlertRow({
+      userId,
+      origin,
+      destination,
+      startDate,
+      endDate,
+      maxPrice,
+    });
+  }
+
   return (
-    <form className="bg-input-background rounded-lg px-5.75 py-8.5 text-lg flex flex-col gap-10 mt-5 w-full" aria-labelledby="form-title">
-      <h2 id="form-title" className="sr-only">Set Price Alert</h2>
+    <form
+      className="bg-input-background rounded-lg px-5.75 py-8.5 text-lg flex flex-col gap-10 mt-5 w-full"
+      aria-labelledby="form-title"
+      onSubmit={handleSubmit}
+      ref={formRef}
+    >
+      <h2 id="form-title" className="sr-only">
+        Set Price Alert
+      </h2>
       <fieldset>
         <legend>When are you flying?</legend>
         <div className="text-base flex justify-between items-center mt-2.5 gap-7.5 flex-wrap">
@@ -45,7 +122,7 @@ function SetAlertForm() {
               placeholder="Flying from"
               required
               aria-required="true"
-              className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer placeholder:text-sm"
+              className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer"
             />
           </div>
           <div className="flex-1 min-w-62.5">
@@ -59,10 +136,13 @@ function SetAlertForm() {
               placeholder="Flying to"
               required
               aria-required="true"
-              className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer placeholder:text-sm"
+              className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer"
             />
           </div>
         </div>
+        <p className="text-sm mt-1.75 text-foreground/70">
+          Enter airport codes (e.g., DEL, JFK)
+        </p>
       </fieldset>
 
       <fieldset>
@@ -74,11 +154,10 @@ function SetAlertForm() {
           <input
             type="number"
             placeholder="$400"
-            className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer placeholder:text-sm text-base"
+            className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer text-base"
             id="alert-price"
             name="alert-price"
             min="0"
-            step="100"
             inputMode="numeric"
             required
             aria-required="true"
@@ -86,8 +165,17 @@ function SetAlertForm() {
         </div>
       </fieldset>
 
-      <button type="submit" className="bg-primary font-medium px-5 max-sm:px-3 py-3 max-sm:py-2 rounded-sm cursor-pointer flex-1 block max-w-100  transition-all duration-150 ease-in hover:bg-btn-hover self-start">
+      {error && <p className="text-sm text-red-400">{error}</p>}
+
+      <button
+        type="submit"
+        className="bg-primary font-medium px-5 max-sm:px-3 py-3 max-sm:py-2 rounded-sm cursor-pointer flex-1 flex max-w-100  transition-all duration-150 ease-in hover:bg-btn-hover self-start disabled:bg-btn-hover items-center gap-2"
+        disabled={loading}
+      >
         Create my alert
+        {loading && (
+          <span className="size-6 border-3 border-white border-b-transparent rounded-full inline-block animate-spin"></span>
+        )}
       </button>
     </form>
   );
