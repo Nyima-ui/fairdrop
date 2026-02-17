@@ -1,7 +1,7 @@
 "use client";
 import DeletePopUp from "./DeletePopUp";
 import { useState } from "react";
-import { AlertProps } from "../(main)/alerts/page";
+import { AlertProps } from "@/types/component";
 
 interface ActiveAlertsProps {
   alert: AlertProps;

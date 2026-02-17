@@ -1,12 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FlightCardProps } from "@/types/component";
-
-function formatPrice(price: string): string {
-  const flightPrice = Number(price.split("$")[1]);
-  const inr = Math.round(flightPrice * 90.66);
-  return `₹${inr.toLocaleString("en-IN")}`;
-}
+import { formatPrice } from "@/utils/formatter";
 
 const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
   return (

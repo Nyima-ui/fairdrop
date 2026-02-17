@@ -2,21 +2,10 @@
 import Search from "../../components/Search";
 import SetAlertForm from "../../components/SetAlertForm";
 import ActiveAlerts from "../../components/ActiveAlerts";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase/client";
 import { useAuth } from "@/context/AuthContext";
-
-export interface AlertProps {
-  alert_id: string;
-  created_id: string;
-  destination: string;
-  end_date: string;
-  is_active: boolean;
-  max_price: number;
-  origin: string;
-  start_date: string;
-  user_id: string;
-}
+import { AlertProps } from "@/types/component";
 
 const AlertSettingPage = () => {
   const [activeAlerts, setActiveAlerts] = useState<AlertProps[]>([]);
@@ -24,7 +13,7 @@ const AlertSettingPage = () => {
   const [loading, setLoading] = useState(false);
   const { user } = useAuth();
 
-  async function fetchActiveAlerts() {
+  const fetchActiveAlerts = useCallback(async () => {
     try {
       if (!user) return;
       const userId = user.id;
@@ -48,11 +37,11 @@ const AlertSettingPage = () => {
     } finally {
       setLoading(false);
     }
-  }
+  }, [user]);
 
   useEffect(() => {
     fetchActiveAlerts();
-  }, [user]);
+  }, [fetchActiveAlerts]);
   return (
     <div>
       <div className="max-w-211.5 mx-auto">
