@@ -12,12 +12,12 @@ const AlertSettingPage = () => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const { user } = useAuth();
+  const userId = user?.id;
 
   const fetchActiveAlerts = useCallback(async () => {
     try {
-      if (!user) return;
-      const userId = user.id;
-
+      if (!userId) return;
+      
       setLoading(true);
       setError(null);
       const { data, error } = await supabase
@@ -37,7 +37,7 @@ const AlertSettingPage = () => {
     } finally {
       setLoading(false);
     }
-  }, [user]);
+  }, [userId]);
 
   useEffect(() => {
     fetchActiveAlerts();

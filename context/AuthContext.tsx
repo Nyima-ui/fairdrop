@@ -15,7 +15,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     async function getSession() {
       const { data, error } = await supabase.auth.getSession();
       setUser(data.session?.user ?? null);
-      if (error) console.error("Error getting session:", error)
+      if (error) console.error("Error getting session:", error);
     }
 
     const {

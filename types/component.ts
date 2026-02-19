@@ -21,6 +21,7 @@ export interface FormDataProps {
   startDate: string;
   endDate: string;
   maxPrice: string;
+  email: string;
 }
 
 export interface AlertProps {
@@ -33,6 +34,7 @@ export interface AlertProps {
   origin: string;
   start_date: string;
   user_id: string;
+  email: string;
 }
 
 export interface ComparePricesProps {

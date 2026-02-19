@@ -5,7 +5,7 @@ import { searchFlights } from "@/lib/flights/searchFlight";
 export async function GET() {
   try {
     const activeAlerts = await fetchActiveAlerts();
-
+    console.log(activeAlerts)
     if (activeAlerts.length === 0) {
       return NextResponse.json({ results: [], message: "No active alerts" });
     }
@@ -31,6 +31,7 @@ export async function GET() {
             origin: alert.origin,
             destination: alert.destination,
             max_price: alert.max_price,
+            email: alert.email,
             availableFlights,
             status: "success" as const,
           };
@@ -41,6 +42,7 @@ export async function GET() {
             origin: alert.origin,
             destination: alert.destination,
             max_price: alert.max_price,
+            email: alert.email,
             availableFlights: null,
             status: "failed" as const,
             error: error instanceof Error ? error.message : "Unknown error",

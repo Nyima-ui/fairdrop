@@ -25,7 +25,14 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
         start_date: alertData.startDate,
         end_date: alertData.endDate,
         max_price: alertData.maxPrice,
+        email: alertData.email,
       });
+      if (error) {
+        if (error.message.includes("Alert limit reached")) {
+          setError("You can only have 2 active alerts at a time.");
+          return;
+        }
+      }
       if (error) throw error;
       fetchActiveAlerts();
     } catch (error) {
@@ -51,6 +58,7 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
     const startDate = formData.get("earliest-date") as string;
     const endDate = formData.get("latest-date") as string;
     const maxPrice = formData.get("alert-price") as string;
+    const email = user.email ?? "";
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -71,6 +79,7 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
       startDate,
       endDate,
       maxPrice,
+      email,
     });
   }
 
