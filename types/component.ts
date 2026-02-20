@@ -41,3 +41,9 @@ export interface ComparePricesProps {
   matchPrice: number;
   flights: FlightProps[];
 }
+
+export interface SendEmailProps {
+  to: string;
+  subject: string;
+  html: string;
+}

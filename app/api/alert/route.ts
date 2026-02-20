@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import { fetchActiveAlerts, comparePrices } from "./action";
 import { searchFlights } from "@/lib/flights/searchFlight";
+import { sendEmail } from "@/lib/email/sendEmail";
 
 export async function GET() {
   try {
     const activeAlerts = await fetchActiveAlerts();
-    console.log(activeAlerts)
     if (activeAlerts.length === 0) {
       return NextResponse.json({ results: [], message: "No active alerts" });
     }
@@ -24,6 +24,20 @@ export async function GET() {
           const availableFlights = comparePrices({
             matchPrice: alert.max_price,
             flights,
+          });
+
+          await sendEmail({
+            to: alert.email,
+            subject: `FairDrop: Flights found for ${alert.origin} -> ${alert.destination}`,
+            html: `<h2>Flights below ₹${alert.max_price} found!</h2> ${availableFlights
+              ?.map(
+                (f) => `<div>
+              <p><strong>${f.name}</strong></p>
+              <p>${f.departure} -> ${f.arrival}</p>
+              <p>Price: ${f.price}</p>
+              </div>`,
+              )
+              .join("")}`,
           });
 
           return {
