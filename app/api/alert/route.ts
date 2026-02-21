@@ -28,16 +28,33 @@ export async function GET() {
 
           await sendEmail({
             to: alert.email,
-            subject: `FairDrop: Flights found for ${alert.origin} -> ${alert.destination}`,
-            html: `<h2>Flights below ₹${alert.max_price} found!</h2> ${availableFlights
-              ?.map(
-                (f) => `<div>
-              <p><strong>${f.name}</strong></p>
-              <p>${f.departure} -> ${f.arrival}</p>
-              <p>Price: ${f.price}</p>
-              </div>`,
-              )
-              .join("")}`,
+            subject: `FairDrop Alert: Flights from ${alert.origin} to ${alert.destination} under Rs.${alert.max_price.toLocaleString("en-IN")}`,
+            html: `
+<div class="body" style="background-color: #DAE0E5; font-family: 'Helvetica', Arial, sans-serif; font-size: 16px; padding: 60px 0px" role="presentation">
+  <div style="max-width: 528px; background-color: #FFFFFF; padding: 40px 28px; border-radius: 3px; margin: 0px auto" role="presentation">
+    <a href="https://fairdrop-sage.vercel.app/" target="_blank">
+      <img src="https://uhbyckpiasoinqkwftap.supabase.co/storage/v1/object/public/public-assets/email-fairdrop-logo.png" style="transform: translateX(-9px)" alt="FairDrop logo" /> </a>
+    <h2 style="margin-top: 30px;">Your fare alert just matched! 🎉</h2>
+    <p style="margin-top: 20px;">We found flights from <strong>${alert.origin} → ${alert.destination}</strong> under your target of <strong>₹${alert.max_price.toLocaleString("en-IN")}</strong>.</p>
+
+    <h3 style="margin-top: 30px;">Here are the top deals:</h3>
+
+    ${availableFlights
+      ?.map(
+        (f) => ` <div style="margin-top: 30px;">
+      <p>Airline: <strong>${f.name}</strong></p>
+      <p style="margin-top: 10px">🛫 ${alert.origin} → ${alert.destination}</p>
+      <p style="margin-top: 10px">🕐 Departure: ${f.departure}</p>
+      <p style="margin-top: 10px">💰 Price: <strong>${f.price}</strong></p>
+      <a href="https://www.google.com/travel/flights?gl=IN&hl=en" style="text-decoration: none; background: #1247B2; color: white; padding: 10px 20px; border-radius: 3px; display: inline-block; margin-top: 30px;" aria-label="View flight details" >View flight</a>
+    </div>`,
+      )
+      .join("")}
+
+    <p style="font-size: 14px; margin-top: 20px;">You're receiving this because you set a fare alert on FairDrop.</p>
+  </div>
+</div>
+`,
           });
 
           return {

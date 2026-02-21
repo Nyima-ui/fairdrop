@@ -26,3 +26,8 @@ export function comparePrices({ matchPrice, flights }: ComparePricesProps) {
     }));
   } else return null;
 }
+
+
+export function emailHtml(){
+  return ``
+}
