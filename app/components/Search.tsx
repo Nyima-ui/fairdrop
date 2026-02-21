@@ -152,7 +152,7 @@ const SearchComponent = () => {
       onSubmit={handleSubmit}
       role="search"
       aria-label="Flight search"
-      className="flex bg-input-background px-1.25 py-1.75 gap-3 mt-15 rounded-lg w-full flex-wrap max-sm:mt-14 justify-center"
+      className="flex bg-input-background px-1.25 py-1.75 gap-3 mt-15 rounded-lg w-full flex-wrap max-sm:mt-14 justify-center shadow-sm shadow-primary"
     >
       <div className="flex gap-4 items-center relative">
         <div className="relative">

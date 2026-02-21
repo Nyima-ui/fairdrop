@@ -5,7 +5,7 @@ import { formatPrice } from "@/utils/formatter";
 
 const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
   return (
-    <li className="mb-5">
+    <li className="mb-5 shadow-xs shadow-primary">
       <div className="bg-input-background flex px-8 py-3 justify-between items-center font-light rounded-sm max-lg:hidden">
         <div className="flex flex-col gap-0.5">
           <Image

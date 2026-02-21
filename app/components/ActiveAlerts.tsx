@@ -1,13 +1,21 @@
 "use client";
 import DeletePopUp from "./DeletePopUp";
-import { useState } from "react";
+import React, { useState } from "react";
 import { AlertProps } from "@/types/component";
 
 interface ActiveAlertsProps {
   alert: AlertProps;
+  setIsEditing: React.Dispatch<React.SetStateAction<boolean>>;
+  setSelectedAlert: React.Dispatch<React.SetStateAction<AlertProps | null>>;
+  fetchActiveAlerts: () => Promise<void>;
 }
 
-const ActiveAlerts = ({ alert }: ActiveAlertsProps) => {
+const ActiveAlerts = ({
+  alert,
+  setIsEditing,
+  setSelectedAlert,
+  fetchActiveAlerts,
+}: ActiveAlertsProps) => {
   const [isModalOpen, setisModalOpen] = useState(false);
 
   function formatDate(date: string): string {
@@ -18,8 +26,13 @@ const ActiveAlerts = ({ alert }: ActiveAlertsProps) => {
     });
   }
 
+  function handleEdit(alert: AlertProps) {
+    setSelectedAlert(alert);
+    setIsEditing(true);
+  }
+
   return (
-    <li className="bg-input-background rounded-lg p-3.75">
+    <li className="bg-input-background rounded-lg p-3.75 shadow-sm shadow-primary">
       <article aria-labelledby="alert-route">
         <div className="flex justify-between items-center gap-5">
           <div className="flex-1 min-w-48 max-w-70">
@@ -62,6 +75,7 @@ const ActiveAlerts = ({ alert }: ActiveAlertsProps) => {
             className="px-6.25 py-1.25 border rounded-sm cursor-pointer hover:border-primary"
             type="button"
             aria-label={`Edit alert for ${alert.origin} - ${alert.destination}`}
+            onClick={() => handleEdit(alert)}
           >
             Edit
           </button>
@@ -75,7 +89,13 @@ const ActiveAlerts = ({ alert }: ActiveAlertsProps) => {
           </button>
         </div>
       </article>
-      {isModalOpen && <DeletePopUp setisModalOpen={setisModalOpen} />}
+      {isModalOpen && (
+        <DeletePopUp
+          setisModalOpen={setisModalOpen}
+          alertId={alert.alert_id}
+          fetchActiveAlerts={fetchActiveAlerts}
+        />
+      )}
     </li>
   );
 };

@@ -1,12 +1,21 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { supabase } from "@/lib/supabase/client";
 
 interface DeletePopUpProps {
   setisModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  alertId: string;
+  fetchActiveAlerts: () => Promise<void>;
 }
 
-const DeletePopUp = ({ setisModalOpen }: DeletePopUpProps) => {
+const DeletePopUp = ({
+  setisModalOpen,
+  alertId,
+  fetchActiveAlerts,
+}: DeletePopUpProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
@@ -15,10 +24,32 @@ const DeletePopUp = ({ setisModalOpen }: DeletePopUpProps) => {
       document.body.style.overflow = originalOverflow;
     };
   }, []);
-  
+
   function handleClickOutside(e: React.MouseEvent<HTMLDivElement>) {
     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
       setisModalOpen(false);
+    }
+  }
+
+  async function handleDelete() {
+    if (!alertId) return;
+    try {
+      setLoading(true);
+      setError(null);
+      const { error } = await supabase
+        .from("price_alerts")
+        .delete()
+        .eq("alert_id", alertId);
+      if (error) throw error;
+    } catch (error) {
+      console.log("Error deleting an error", error);
+      setError(
+        error instanceof Error ? error.message : "Error deleting an alert.",
+      );
+    } finally {
+      setLoading(false);
+      setisModalOpen(false);
+      fetchActiveAlerts();
     }
   }
   return (
@@ -54,10 +85,15 @@ const DeletePopUp = ({ setisModalOpen }: DeletePopUpProps) => {
           </button>
           <button
             type="button"
-            className="flex-1 py-2.5 bg-primary rounded-sm cursor-pointer hover:bg-btn-hover transition-all duration-100 ease-in"
+            className="flex-1 py-2.5 bg-primary rounded-sm cursor-pointer hover:bg-btn-hover transition-all duration-100 ease-in flex items-center justify-center gap-5"
             aria-label="Confirm delete alert"
+            onClick={handleDelete}
+            disabled={loading}
           >
             Delete
+            {loading && (
+              <span className="size-6 border-3 border-white border-b-transparent rounded-full inline-block animate-spin"></span>
+            )}
           </button>
         </div>
       </div>

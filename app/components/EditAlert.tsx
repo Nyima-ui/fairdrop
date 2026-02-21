@@ -1,97 +1,77 @@
 "use client";
-import { useAuth } from "@/context/AuthContext";
+import { AlertProps } from "@/types/component";
+import React, { useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase/client";
-import { useRef, useState } from "react";
-import { FormDataProps } from "@/types/component";
 
-interface SetAlertFormProps {
-  fetchActiveAlerts: () => Promise<void>;
+interface EditAlertProps {
+  alert: AlertProps | null;
+  setActiveAlerts: React.Dispatch<React.SetStateAction<AlertProps[]>>;
+  setIsEditing: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
-  const { user } = useAuth();
+const EditAlert = ({
+  alert,
+  setActiveAlerts,
+  setIsEditing,
+}: EditAlertProps) => {
+  const [formData, setFormData] = useState({
+    destination: alert?.destination ?? "",
+    origin: alert?.origin ?? "",
+    start_date: alert?.start_date ?? "",
+    end_date: alert?.end_date ?? "",
+    max_price: alert?.max_price ?? 0,
+  });
+  const formRef = useRef<HTMLFormElement | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const formRef = useRef<HTMLFormElement>(null);
 
-  async function insertAlertRow(alertData: FormDataProps) {
-    try {
-      setLoading(true);
-      setError(null);
-      const { error } = await supabase.from("price_alerts").insert({
-        user_id: alertData.userId,
-        origin: alertData.origin,
-        destination: alertData.destination,
-        start_date: alertData.startDate,
-        end_date: alertData.endDate,
-        max_price: alertData.maxPrice,
-        email: alertData.email,
-      });
-      if (error) {
-        if (error.message.includes("Alert limit reached")) {
-          setError("You can only have 2 active alerts at a time.");
-          return;
-        }
-      }
-      if (error) throw error;
-      fetchActiveAlerts();
-    } catch (error) {
-      console.error("Error inserting alert data", error);
-      setError(
-        error instanceof Error
-          ? error.message
-          : "An error occured. Please try again.",
-      );
-    } finally {
-      setLoading(false);
-      formRef.current?.reset();
-    }
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = e.currentTarget;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    if (!user) return;
-    const userId = user.id;
-    const origin = formData.get("origin") as string;
-    const destination = formData.get("destination") as string;
-    const startDate = formData.get("earliest-date") as string;
-    const endDate = formData.get("latest-date") as string;
-    const maxPrice = formData.get("alert-price") as string;
-    const email = user.email ?? "";
+    try {
+      setLoading(true);
+      setError(null);
+      const { data, error } = await supabase
+        .from("price_alerts")
+        .update(formData)
+        .eq("alert_id", alert?.alert_id)
+        .select()
+        .single();
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    if (new Date(startDate) < today) {
-      alert("Earliest date can't be in the past.");
-      return;
+      if (error) throw error;
+      setActiveAlerts((prev) =>
+        prev.map((a) => (a.alert_id === alert?.alert_id ? data : a)),
+      );
+    } catch (error) {
+      console.error("Error updating alert", error);
+      setError(
+        error instanceof Error ? error.message : "Error updating alert.",
+      );
+    } finally {
+      formRef.current?.reset();
+      setIsEditing(false);
     }
-    if (new Date(endDate) < new Date(startDate)) {
-      alert("Latest date can't be before the earliest date.");
-      return;
-    }
-
-    await insertAlertRow({
-      userId,
-      origin,
-      destination,
-      startDate,
-      endDate,
-      maxPrice,
-      email,
-    });
   }
 
+  useEffect(() => {
+    setTimeout(() => {
+      formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  }, []);
   return (
     <form
-      className="bg-input-background rounded-lg px-5.75 py-8.5 text-lg flex flex-col gap-10 mt-5 w-full shadow-sm shadow-primary"
+    // shadow-sm shadow-primary
+      className="bg-input-background rounded-lg px-5.75 py-8.5 text-lg flex flex-col gap-10 mt-5 w-full  edit-alert-form"
       aria-labelledby="form-title"
       onSubmit={handleSubmit}
       ref={formRef}
     >
       <h2 id="form-title" className="sr-only">
-        Set Price Alert
+        Update Price Alert
       </h2>
       <fieldset>
         <legend>When are you flying?</legend>
@@ -101,10 +81,12 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
             <input
               type="date"
               id="earliest-date"
-              name="earliest-date"
+              name="start_date"
               required
               aria-required="true"
               className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer mt-1 text-foreground/80"
+              value={formData.start_date}
+              onChange={handleChange}
             />
           </div>
           <div className="flex flex-col gap-1.25 flex-1">
@@ -112,8 +94,10 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
             <input
               type="date"
               id="latest-date"
-              name="latest-date"
+              name="end_date"
               className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer mt-1 text-foreground/80"
+              value={formData.end_date}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -137,6 +121,8 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
               required
               aria-required="true"
               className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer"
+              value={formData.origin}
+              onChange={handleChange}
             />
           </div>
           <div className="flex-1 min-w-62.5">
@@ -151,6 +137,8 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
               required
               aria-required="true"
               className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer"
+              value={formData.destination}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -170,29 +158,42 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
             placeholder="$400"
             className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs scheme-light dark cursor-pointer text-base"
             id="alert-price"
-            name="alert-price"
+            name="max_price"
             min="0"
             inputMode="numeric"
             required
             aria-required="true"
+            value={formData.max_price}
+            onChange={handleChange}
           />
         </div>
       </fieldset>
 
       {error && <p className="text-sm text-red-400">{error}</p>}
 
-      <button
-        type="submit"
-        className="bg-primary font-medium px-5 max-sm:px-3 py-3 max-sm:py-2 rounded-sm cursor-pointer flex-1 flex max-w-100 transition-all duration-150 ease-in hover:bg-btn-hover self-start disabled:bg-btn-hover items-center gap-2"
-        disabled={loading}
-      >
-        Create my alert
-        {loading && (
-          <span className="size-6 border-3 border-white border-b-transparent rounded-full inline-block animate-spin"></span>
-        )}
-      </button>
+      <div className="flex gap-5 flex-wrap">
+        <button
+          type="submit"
+          className="bg-primary font-medium px-5 max-sm:px-3 py-3 max-sm:py-2 rounded-sm cursor-pointer flex max-w-100  transition-all duration-150 ease-in hover:bg-btn-hover self-start disabled:bg-btn-hover items-center gap-2"
+          disabled={loading}
+        >
+          Update my alert
+          {loading && (
+            <span className="size-6 border-3 border-white border-b-transparent rounded-full inline-block animate-spin"></span>
+          )}
+        </button>
+
+        <button
+          type="button"
+          className="bg-transparent font-medium px-5 max-sm:px-3 py-3 max-sm:py-2 rounded-sm cursor-pointer flex max-w-100  transition-all duration-150 ease-in hover:bg-background hover:border-transparent self-start disabled:bg-btn-hover items-center gap-2 border border-primary"
+          disabled={loading}
+          onClick={() => setIsEditing(false)}
+        >
+          Cancel
+        </button>
+      </div>
     </form>
   );
-}
+};
 
-export default SetAlertForm;
+export default EditAlert;

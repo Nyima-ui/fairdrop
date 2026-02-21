@@ -44,3 +44,32 @@ input[number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; /* Sometimes needed to remove spacing */
 }
+
+.edit-alert-form {
+  outline-width: 1px;
+  outline-offset: 0px;
+  outline-color: rgba(0, 111, 204, 0);
+  outline-style: solid;
+  animation: animateOutline 2.5s ease infinite;
+}
+
+@keyframes animateOutline {
+  0% {
+    outline-width: 1px;
+    outline-offset: 0px;
+    outline-color: rgba(0, 111, 204, 0);
+  }
+  10% {
+    outline-color: rgba(0, 111, 204, 0.75);
+  }
+  50% {
+    outline-width: 7px;
+    outline-offset: 2px;
+    outline-color: rgba(0, 111, 204, 0);
+  }
+  100% {
+    outline-width: 7px;
+    outline-offset: 2px;
+    outline-color: rgba(0, 111, 204, 0);
+  }
+}
