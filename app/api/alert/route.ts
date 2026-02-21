@@ -1,10 +1,15 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { fetchActiveAlerts, comparePrices } from "./action";
 import { searchFlights } from "@/lib/flights/searchFlight";
 import { sendEmail } from "@/lib/email/sendEmail";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
+    const secret = request.headers.get("x-cron-secret");
+    if (secret !== process.env.CRON_SECRET) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+    
     const activeAlerts = await fetchActiveAlerts();
     if (activeAlerts.length === 0) {
       return NextResponse.json({ results: [], message: "No active alerts" });
@@ -43,10 +48,10 @@ export async function GET() {
       ?.map(
         (f) => ` <div style="margin-top: 30px;">
       <p>Airline: <strong>${f.name}</strong></p>
-      <p style="margin-top: 10px">🛫 ${alert.origin} → ${alert.destination}</p>
-      <p style="margin-top: 10px">🕐 Departure: ${f.departure}</p>
-      <p style="margin-top: 10px">💰 Price: <strong>${f.price}</strong></p>
-      <a href="https://www.google.com/travel/flights?gl=IN&hl=en" style="text-decoration: none; background: #1247B2; color: white; padding: 10px 20px; border-radius: 3px; display: inline-block; margin-top: 30px;" aria-label="View flight details" >View flight</a>
+      <p style="margin: 7px 0px 0px">🛫 ${alert.origin} → ${alert.destination}</p>
+      <p style="margin: 7px 0px 0px">🕐 Departure: ${f.departure}</p>
+      <p style="margin: 7px 0px 0px">💰 Price: <strong>${f.price}</strong></p>
+      <a href="https://www.google.com/travel/flights?gl=IN&hl=en" style="text-decoration: none; background: #1247B2; color: white; padding: 10px 20px; border-radius: 3px; display: inline-block; margin: 25px 0px 0px;" aria-label="View flight details" >View flight</a>
     </div>`,
       )
       .join("")}

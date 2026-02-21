@@ -16,6 +16,7 @@ export async function sendEmail({ to, subject, html }: SendEmailProps) {
   const gmail = google.gmail({ version: "v1", auth: oauth2Client });
 
   const message = [
+    `From: FairDrop <ntenzin492@gmail.com>`,
     `To: ${to}`,
     `Subject: ${subject}`,
     "MIME-version: 1.0",

@@ -1,0 +1,17 @@
+name: Flight Price Checker
+
+on: 
+  schedule: 
+    - cron: '0 6 * * *'
+    - cron: '0 13 * * *'
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+
+jobs:
+  check-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call price check API
+        run: |
+          curl -X GET https://fairdrop-sage.vercel.app/api/alert \
+            -H "x-cron-secret: ${{secrets.CRON_SECRET}}"
