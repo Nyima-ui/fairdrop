@@ -47,7 +47,8 @@ export async function updateSession(request: NextRequest) {
     pathname === "/" ||
     pathname.startsWith("/flights") ||
     pathname.startsWith("/sign-in") ||
-    pathname.startsWith("/api");
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/auth");
 
   if (!user && !isPublicRoute) {
     // no user, potentially respond by redirecting the user to the login page
