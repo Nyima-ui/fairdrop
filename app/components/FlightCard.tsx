@@ -76,15 +76,25 @@ const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
           <Link
             href="https://www.google.com/travel/flights?gl=IN&hl=en"
             target="_blank"
-            className="flex gap-1.25"
+            className="flex gap-1.25 group overflow-hidden items-center"
           >
             <span>View in Google flights</span>
-            <Image
-              height={15}
-              width={15}
-              src="/icons/call_made.svg"
-              alt="View in google flights"
-            />
+            <span className="relative">
+              <Image
+                height={15}
+                width={15}
+                src="/icons/call_made.svg"
+                alt="View in google flights"
+                className="block group-hover:translate-x-2.5 group-hover:-translate-y-5 transition-transform duration-300 ease"
+              />
+              <Image
+                height={15}
+                width={15}
+                src="/icons/call_made.svg"
+                alt="View in google flights"
+                className="absolute block top-full translate-y-px right-2.5 group-hover:translate-x-2.5 group-hover:-translate-y-4.25 transition-transform duration-300 ease"
+              />
+            </span>
           </Link>
         </div>
       </div>

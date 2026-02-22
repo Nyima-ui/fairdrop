@@ -64,7 +64,6 @@ const EditAlert = ({
   }, []);
   return (
     <form
-    // shadow-sm shadow-primary
       className="bg-input-background rounded-lg px-5.75 py-8.5 text-lg flex flex-col gap-10 mt-5 w-full  edit-alert-form"
       aria-labelledby="form-title"
       onSubmit={handleSubmit}
