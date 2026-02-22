@@ -32,6 +32,7 @@ const AuthPage = () => {
         if (error) throw error;
         formRef.current?.reset();
         router.push("/");
+        router.refresh();
       } else {
         const phone = formData.get("phone-num") as string;
         const { error } = await supabase.auth.signUp({
@@ -44,6 +45,7 @@ const AuthPage = () => {
         if (error) throw error;
         formRef.current?.reset();
         router.push("/");
+        router.refresh();
       }
     } catch (error) {
       setError((error as Error).message);
@@ -56,7 +58,6 @@ const AuthPage = () => {
   async function handleGoogleSignIn(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     e.stopPropagation();
-    console.log("function call");
     try {
       setGoogleLoading(true);
       setError(null);
