@@ -22,8 +22,8 @@ const SearchComponent = () => {
   >(null);
   const [suggestion, setSuggestion] = useState<Location[]>([]);
   const [selectedCodes, setSelectedCodes] = useState({
-    originIATA: "GAY",
-    destinationIATA: "DEL",
+    originIATA: "",
+    destinationIATA: "",
   });
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -68,7 +68,7 @@ const SearchComponent = () => {
       } catch (error) {
         console.error("Error fetching autocomplete data", error);
       }
-    }, 300);
+    }, 1000);
     return () => clearTimeout(debounceTimer);
   }, [flightDetails.origin, flightDetails.destination, activeField]);
 
@@ -88,35 +88,26 @@ const SearchComponent = () => {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // if (!selectedCodes.originIATA) {
-    //   alert("Please select an origin airport from the suggestions.");
-    //   return;
-    // }
-    // if (!selectedCodes.destinationIATA) {
-    //   alert("Please select a destination airport from the suggestions.");
-    //   return;
-    // }
-    // if (!flightDetails.departure) {
-    //   alert("Please select a departure date.");
-    //   return;
-    // }
-
-    try {
-      const params = new URLSearchParams({
-        // origin: selectedCodes.originIATA,
-        origin: flightDetails.origin,
-        // destination: selectedCodes.destinationIATA,
-        destination: flightDetails.destination,
-        date: flightDetails.departure,
-      });
-      router.push(`/flights/?${params.toString()}`);
-    } catch (error) {
-      console.error("Error fetching flight details", error);
+    if (!selectedCodes.originIATA) {
+      alert("Please select an origin airport from the suggestions.");
+      return;
     }
+    if (!selectedCodes.destinationIATA) {
+      alert("Please select a destination airport from the suggestions.");
+      return;
+    }
+    if (!flightDetails.departure) {
+      alert("Please select a departure date.");
+      return;
+    }
+
+    const params = new URLSearchParams({
+      origin: selectedCodes.originIATA,
+      destination: selectedCodes.destinationIATA,
+      date: flightDetails.departure,
+    });
+    router.push(`/flights/?${params.toString()}`);
   }
-  useEffect(() => {
-    // console.log(selectedCodes);
-  }, [selectedCodes]);
 
   useEffect(() => {
     function handleClickOutSide(e: MouseEvent) {
@@ -164,7 +155,7 @@ const SearchComponent = () => {
             type="text"
             placeholder="From"
             name="origin"
-            // required
+            required
             className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs"
             autoComplete="off"
             value={flightDetails.origin}
@@ -182,33 +173,33 @@ const SearchComponent = () => {
               role="listbox"
               id="origin-suggestions"
             >
-              {suggestion.map((loc) => (
+              {suggestion.map((loc, idx) => (
                 <li
-                  key={loc.id}
+                  key={`${loc.id}-${idx}`}
                   role="group"
-                  aria-labelledby={`location-${loc.id}`}
+                  aria-labelledby={`location-${loc.position}`}
                 >
                   <div className="flex items-center gap-2.5">
                     <LocationPin aria-hidden="true" />
-                    <p className="text-base" id={`location-${loc.id}`}>
+                    <p className="text-base" id={`location-${loc.position}`}>
                       {loc.name}
                     </p>
                   </div>
                   {loc.airports && loc.airports.length > 0 && (
                     <ul>
-                      {loc.airports.map((airport) => (
+                      {loc.airports.map((airport, idx) => (
                         <li
                           role="option"
                           aria-selected={false}
                           tabIndex={0}
-                          key={airport.id}
+                          key={`${airport.city_id}-${idx}`}
                           className="cursor-pointer flex items-center py-2.5 pl-7.5 gap-2.5 hover:bg-background rounded-sm"
-                          // onClick={() =>
-                          //   handleSelect({
-                          //     locationName: loc.name,
-                          //     iata: airport.id,
-                          //   })
-                          // }
+                          onClick={() =>
+                            handleSelect({
+                              locationName: loc.name,
+                              iata: airport.id,
+                            })
+                          }
                         >
                           <Flying aria-hidden="true" />
                           <span className="whitespace-nowrap">
@@ -243,7 +234,7 @@ const SearchComponent = () => {
             type="text"
             placeholder="To"
             name="destination"
-            // required
+            required
             className="border-2 border-input-border p-2.5 rounded-sm w-full focus:border-primary outline-none focus:ring-primary shadow-xs"
             autoComplete="off"
             value={flightDetails.destination}
@@ -261,9 +252,9 @@ const SearchComponent = () => {
               id="destination-suggestion"
               role="listbox"
             >
-              {suggestion.map((loc) => (
+              {suggestion.map((loc, idx) => (
                 <li
-                  key={loc.id}
+                  key={`${loc.id}-${idx}`}
                   role="group"
                   aria-labelledby={`dest-location-${loc.id}`}
                 >
@@ -273,16 +264,16 @@ const SearchComponent = () => {
                   </div>
                   {loc.airports && loc.airports.length > 0 && (
                     <ul className="">
-                      {loc.airports.map((airport) => (
+                      {loc.airports.map((airport, idx) => (
                         <li
-                          key={airport.id}
+                          key={`${airport.city_id}-${idx}`}
                           className="cursor-pointer flex items-center py-2.5 pl-7.5 gap-2.5 hover:bg-background rounded-sm"
-                          // onClick={() =>
-                          //   handleSelect({
-                          //     locationName: loc.name,
-                          //     iata: airport.id,
-                          //   })
-                          // }
+                          onClick={() =>
+                            handleSelect({
+                              locationName: loc.name,
+                              iata: airport.id,
+                            })
+                          }
                         >
                           <Flying aria-hidden="true" />
                           <span className="whitespace-nowrap">

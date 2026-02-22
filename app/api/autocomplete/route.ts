@@ -201,60 +201,60 @@ async function simulateDelay(ms: number = 300) {
 }
 
 // real api
-// export async function POST(request: NextRequest) {
-//   const API_KEY = process.env.SERP_API_KEY;
-//   try {
-//     const { searchQuery } = await request.json();
-
-//     if (!searchQuery) {
-//       return NextResponse.json(
-//         { message: "SearchQuery is required" },
-//         { status: 400 },
-//       );
-//     }
-//     const url = `https://serpapi.com/search.json?engine=google_flights_autocomplete&q=${searchQuery}&api_key=${API_KEY}`;
-//     const response = await fetch(url);
-
-//     if (!response.ok) {
-//       throw new Error(`SerpAPI returned status ${response.status}`);
-//     }
-//     const data = await response.json();
-//     return NextResponse.json({ success: true, data: data.suggestions });
-//   } catch (error) {
-//     console.error("Autocomplete API error: ", error);
-//     return NextResponse.json(
-//       {
-//         message:
-//           error instanceof Error
-//             ? error.message
-//             : "Failed to fetch autocomplete data",
-//       },
-//       { status: 500 },
-//     );
-//   }
-// }
-
-//mock api
 export async function POST(request: NextRequest) {
+  const API_KEY = process.env.SERP_API_KEY;
   try {
     const { searchQuery } = await request.json();
 
     if (!searchQuery) {
       return NextResponse.json(
-        { message: "Search query is required" },
+        { message: "SearchQuery is required" },
         { status: 400 },
       );
     }
+    const url = `https://serpapi.com/search.json?engine=google_flights_autocomplete&q=${searchQuery}&api_key=${API_KEY}`;
+    const response = await fetch(url);
 
-    await simulateDelay(500);
-    return NextResponse.json({ success: true, data: data2.suggestions });
+    if (!response.ok) {
+      throw new Error(`SerpAPI returned status ${response.status}`);
+    }
+    const data = await response.json();
+    return NextResponse.json({ success: true, data: data.suggestions });
   } catch (error) {
-    console.error("Autocomplete API error", error);
-    return NextResponse.json({
-      message:
-        error instanceof Error
-          ? error.message
-          : "Failed to fetch autocomplete data",
-    });
+    console.error("Autocomplete API error: ", error);
+    return NextResponse.json(
+      {
+        message:
+          error instanceof Error
+            ? error.message
+            : "Failed to fetch autocomplete data",
+      },
+      { status: 500 },
+    );
   }
 }
+
+//mock api
+// export async function POST(request: NextRequest) {
+//   try {
+//     const { searchQuery } = await request.json();
+
+//     if (!searchQuery) {
+//       return NextResponse.json(
+//         { message: "Search query is required" },
+//         { status: 400 },
+//       );
+//     }
+
+//     await simulateDelay(500);
+//     return NextResponse.json({ success: true, data: data2.suggestions });
+//   } catch (error) {
+//     console.error("Autocomplete API error", error);
+//     return NextResponse.json({
+//       message:
+//         error instanceof Error
+//           ? error.message
+//           : "Failed to fetch autocomplete data",
+//     });
+//   }
+// }

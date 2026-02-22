@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
     if (secret !== process.env.CRON_SECRET) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
-    
+
     const activeAlerts = await fetchActiveAlerts();
     if (activeAlerts.length === 0) {
       return NextResponse.json({ results: [], message: "No active alerts" });
@@ -31,10 +31,11 @@ export async function GET(request: NextRequest) {
             flights,
           });
 
-          await sendEmail({
-            to: alert.email,
-            subject: `FairDrop Alert: Flights from ${alert.origin} to ${alert.destination} under Rs.${alert.max_price.toLocaleString("en-IN")}`,
-            html: `
+          if (availableFlights.length > 0) {
+            await sendEmail({
+              to: alert.email,
+              subject: `FairDrop Alert: Flights from ${alert.origin} to ${alert.destination} under Rs.${alert.max_price.toLocaleString("en-IN")}`,
+              html: `
 <div class="body" style="background-color: #DAE0E5; font-family: 'Helvetica', Arial, sans-serif; font-size: 16px; padding: 60px 0px" role="presentation">
   <div style="max-width: 528px; background-color: #FFFFFF; padding: 40px 28px; border-radius: 3px; margin: 0px auto" role="presentation">
     <a href="https://fairdrop-sage.vercel.app/" target="_blank">
@@ -45,7 +46,7 @@ export async function GET(request: NextRequest) {
     <h3 style="margin-top: 30px;">Here are the top deals:</h3>
 
     ${availableFlights
-      ?.map(
+      .map(
         (f) => ` <div style="margin-top: 30px;">
       <p>Airline: <strong>${f.name}</strong></p>
       <p style="margin: 7px 0px 0px">🛫 ${alert.origin} → ${alert.destination}</p>
@@ -60,8 +61,8 @@ export async function GET(request: NextRequest) {
   </div>
 </div>
 `,
-          });
-
+            });
+          }
           return {
             alert_id: alert.alert_id,
             origin: alert.origin,

@@ -46,9 +46,6 @@ const AlertSettingPage = () => {
     fetchActiveAlerts();
   }, [fetchActiveAlerts]);
 
-  useEffect(() => {
-    // console.log(isEditing);
-  }, [isEditing]);
   return (
     <div>
       <div className="max-w-211.5 mx-auto">

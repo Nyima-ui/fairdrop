@@ -24,10 +24,5 @@ export function comparePrices({ matchPrice, flights }: ComparePricesProps) {
       ...flight,
       price: formatPrice(flight.price),
     }));
-  } else return null;
-}
-
-
-export function emailHtml(){
-  return ``
+  } else return [];
 }
