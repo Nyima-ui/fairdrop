@@ -42,7 +42,7 @@ const DeletePopUp = ({
         .eq("alert_id", alertId);
       if (error) throw error;
     } catch (error) {
-      console.log("Error deleting an error", error);
+      console.error("Error deleting an alert", error);
       setError(
         error instanceof Error ? error.message : "Error deleting an alert.",
       );

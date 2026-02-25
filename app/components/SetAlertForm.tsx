@@ -3,6 +3,7 @@ import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase/client";
 import { useRef, useState } from "react";
 import { FormDataProps } from "@/types/component";
+import { notifyUser } from "@/lib/email/action";
 
 interface SetAlertFormProps {
   fetchActiveAlerts: () => Promise<void>;
@@ -79,6 +80,16 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
       startDate,
       endDate,
       maxPrice,
+      email,
+    });
+
+    const maxPriceAsNumber = parseInt(maxPrice, 10);
+    await notifyUser({
+      origin,
+      destination,
+      startDate,
+      endDate,
+      maxPrice: maxPriceAsNumber,
       email,
     });
   }

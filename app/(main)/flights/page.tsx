@@ -75,10 +75,6 @@ const FlightResults = () => {
     fetchFlights();
   }, [searchParams]);
 
-  useEffect(() => {
-    console.log(flights);
-  }, [flights]);
-
   return (
     <div>
       <div className="max-w-211.5 mx-auto">
