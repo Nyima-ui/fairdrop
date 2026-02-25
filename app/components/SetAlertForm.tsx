@@ -4,6 +4,7 @@ import { supabase } from "@/lib/supabase/client";
 import { useRef, useState } from "react";
 import { FormDataProps } from "@/types/component";
 import { notifyUser } from "@/lib/email/action";
+import { useToast } from "@/context/ToastContext";
 
 interface SetAlertFormProps {
   fetchActiveAlerts: () => Promise<void>;
@@ -14,6 +15,7 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const { showToast } = useToast();
 
   async function insertAlertRow(alertData: FormDataProps) {
     try {
@@ -84,7 +86,7 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
     });
 
     const maxPriceAsNumber = parseInt(maxPrice, 10);
-    await notifyUser({
+    notifyUser({
       origin,
       destination,
       startDate,
@@ -92,6 +94,8 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
       maxPrice: maxPriceAsNumber,
       email,
     });
+
+    showToast();
   }
 
   return (
