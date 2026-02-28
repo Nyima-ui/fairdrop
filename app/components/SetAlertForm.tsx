@@ -83,25 +83,25 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
       return;
     }
 
-    // await insertAlertRow({
-    //   userId,
-    //   origin,
-    //   destination,
-    //   startDate,
-    //   endDate,
-    //   maxPrice,
-    //   email,
-    // });
+    await insertAlertRow({
+      userId,
+      origin,
+      destination,
+      startDate,
+      endDate,
+      maxPrice,
+      email,
+    });
 
-    // const maxPriceAsNumber = parseInt(maxPrice, 10);
-    // notifyUser({
-    //   origin,
-    //   destination,
-    //   startDate,
-    //   endDate,
-    //   maxPrice: maxPriceAsNumber,
-    //   email,
-    // });
+    const maxPriceAsNumber = parseInt(maxPrice, 10);
+    notifyUser({
+      origin,
+      destination,
+      startDate,
+      endDate,
+      maxPrice: maxPriceAsNumber,
+      email,
+    });
 
     showToast({
       title: "Price Alert Set",
