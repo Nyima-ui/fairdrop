@@ -35,6 +35,8 @@ import { NextResponse, NextRequest } from "next/server";
 //   }
 // }
 
+import { parseSerpFlights } from "@/lib/flights/parser";
+
 // SERP API
 export async function POST(request: NextRequest) {
   try {
@@ -56,12 +58,18 @@ export async function POST(request: NextRequest) {
       hl: "en",
       api_key: process.env.SERP_API_KEY!,
     });
-   
-    const fullUrl = `https://serpapi.com/search.json?${params}`
+
+    const fullUrl = `https://serpapi.com/search.json?${params}`;
     const response = await fetch(fullUrl);
     const data = await response.json();
+    const parsedFlights = parseSerpFlights(data);
+    const flights = {
+      origin,
+      destination,
+      flights: parsedFlights,
+    };
 
-    return NextResponse.json({ success: true, flights: data });
+    return NextResponse.json({ success: true, flights });
   } catch (error) {
     console.error("SERP API error", error);
     return NextResponse.json(

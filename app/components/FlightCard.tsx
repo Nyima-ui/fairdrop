@@ -69,8 +69,8 @@ const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
         <div>
           <p>
             <span className="sr-only">Price:</span>
-            <span aria-label={formatPrice(flight.price)}>
-              {formatPrice(flight.price)}
+            <span aria-label={flight.price}>
+               {flight.price}
             </span>
           </p>
           <Link
@@ -146,10 +146,10 @@ const FlightCard = ({ origin, destination, flight }: FlightCardProps) => {
           <p className="self-center">
             <span className="sr-only">Price:</span>
             <span
-              aria-label={formatPrice(flight.price)}
+              aria-label={flight.price}
               className="text-nowrap"
             >
-              {formatPrice(flight.price)}
+              {flight.price}
             </span>
           </p>
         </div>
