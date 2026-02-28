@@ -10,8 +10,10 @@ import LocationPin from "./svgs/LocationPin";
 import Flying from "./svgs/Flying";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
+import { useToast } from "@/context/ToastContext";
 
 const SearchComponent = () => {
+  const searchParams = useSearchParams();
   const [flightDetails, setFlightDetails] = useState<SearchDetails>({
     origin: "",
     destination: "",
@@ -22,11 +24,11 @@ const SearchComponent = () => {
   >(null);
   const [suggestion, setSuggestion] = useState<Location[]>([]);
   const [selectedCodes, setSelectedCodes] = useState({
-    originIATA: "",
-    destinationIATA: "",
+    originIATA: searchParams.get("origin") ?? "",
+    destinationIATA: searchParams.get("destination") ?? "",
   });
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const { showToast } = useToast();
 
   const originSuggestionRef = useRef<HTMLUListElement>(null);
   const destinationSuggestionRef = useRef<HTMLUListElement>(null);
@@ -68,7 +70,7 @@ const SearchComponent = () => {
       } catch (error) {
         console.error("Error fetching autocomplete data", error);
       }
-    }, 1000);
+    }, 500);
     return () => clearTimeout(debounceTimer);
   }, [flightDetails.origin, flightDetails.destination, activeField]);
 
@@ -89,15 +91,27 @@ const SearchComponent = () => {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!selectedCodes.originIATA) {
-      alert("Please select an origin airport from the suggestions.");
+      showToast({
+        title: "Invalid Origin",
+        message: "Please select an origin airport from the suggestions.",
+        type: "warning",
+      });
       return;
     }
     if (!selectedCodes.destinationIATA) {
-      alert("Please select a destination airport from the suggestions.");
+      showToast({
+        title: "Invalid Destination",
+        message: "Please select a destination airport from the suggestions.",
+        type: "warning",
+      });
       return;
     }
     if (!flightDetails.departure) {
-      alert("Please select a departure date.");
+      showToast({
+        title: "Invalid Date",
+        message: "Please select a departure date.",
+        type: "success",
+      });
       return;
     }
 
@@ -136,6 +150,10 @@ const SearchComponent = () => {
         departure: date || "",
       });
     }
+    setSelectedCodes({
+      originIATA: origin || "",
+      destinationIATA: destination || "",
+    });
   }, [searchParams]);
 
   return (

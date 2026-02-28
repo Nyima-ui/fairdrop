@@ -1,0 +1,425 @@
+{
+  "success": true,
+  "flights": {
+    "search_metadata": {
+      "id": "69a264abbdfe490f36316859",
+      "status": "Success",
+      "json_endpoint": "https://serpapi.com/searches/cvvFK63-C2A0bU_ZCEUGMw/69a264abbdfe490f36316859.json",
+      "created_at": "2026-02-28 03:44:43 UTC",
+      "processed_at": "2026-02-28 03:44:43 UTC",
+      "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=INR&tfs=CBwQAhoeEgoyMDI2LTAzLTA1agcIARIDSVhMcgcIARIDREVMQgEBSAFwAZgBAg&tfu=EgIIAQ",
+      "raw_html_file": "https://serpapi.com/searches/cvvFK63-C2A0bU_ZCEUGMw/69a264abbdfe490f36316859.html",
+      "prettify_html_file": "https://serpapi.com/searches/cvvFK63-C2A0bU_ZCEUGMw/69a264abbdfe490f36316859.prettify",
+      "total_time_taken": 0.65
+    },
+    "search_parameters": {
+      "engine": "google_flights",
+      "hl": "en",
+      "gl": "us",
+      "type": "2",
+      "departure_id": "IXL",
+      "arrival_id": "DEL",
+      "outbound_date": "2026-03-05",
+      "currency": "INR"
+    },
+    "best_flights": [
+      {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "Kushok Bakula Rimpochee Airport",
+              "id": "IXL",
+              "time": "2026-03-05 11:10"
+            },
+            "arrival_airport": {
+              "name": "Indira Gandhi International Airport",
+              "id": "DEL",
+              "time": "2026-03-05 12:30"
+            },
+            "duration": 80,
+            "airplane": "Airbus A320neo",
+            "airline": "IndiGo",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+            "travel_class": "Economy",
+            "flight_number": "6E 2584",
+            "legroom": "28 in",
+            "extensions": [
+              "Below average legroom (28 in)",
+              "Carbon emissions estimate: 59 kg"
+            ],
+            "often_delayed_by_over_30_min": true
+          }
+        ],
+        "total_duration": 80,
+        "carbon_emissions": {
+          "this_flight": 59000,
+          "typical_for_this_route": 68000,
+          "difference_percent": -13
+        },
+        "price": 3856,
+        "type": "One way",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+        "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZ1kyUlRJMU9EUWFDZ2lRSGhBQUdnTkpUbEk0SEhDS0lRPT0iLFtbIklYTCIsIjIwMjYtMDMtMDUiLCJERUwiLG51bGwsIjZFIiwiMjU4NCJdXV0="
+      },
+      {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "Kushok Bakula Rimpochee Airport",
+              "id": "IXL",
+              "time": "2026-03-05 12:00"
+            },
+            "arrival_airport": {
+              "name": "Indira Gandhi International Airport",
+              "id": "DEL",
+              "time": "2026-03-05 13:30"
+            },
+            "duration": 90,
+            "airplane": "Boeing 737",
+            "airline": "SpiceJet",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
+            "travel_class": "Economy",
+            "flight_number": "SG 124",
+            "legroom": "29 in",
+            "extensions": [
+              "Below average legroom (29 in)",
+              "Stream media to your device",
+              "Carbon emissions estimate: 79 kg"
+            ],
+            "often_delayed_by_over_30_min": true
+          }
+        ],
+        "total_duration": 90,
+        "carbon_emissions": {
+          "this_flight": 80000,
+          "typical_for_this_route": 68000,
+          "difference_percent": 18
+        },
+        "price": 4310,
+        "type": "One way",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
+        "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZ1ZUUnpFeU5Cb0tDTlloRUFBYUEwbE9VamdjY1B3ayIsW1siSVhMIiwiMjAyNi0wMy0wNSIsIkRFTCIsbnVsbCwiU0ciLCIxMjQiXV1d"
+      },
+      {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "Kushok Bakula Rimpochee Airport",
+              "id": "IXL",
+              "time": "2026-03-05 12:35"
+            },
+            "arrival_airport": {
+              "name": "Indira Gandhi International Airport",
+              "id": "DEL",
+              "time": "2026-03-05 14:10"
+            },
+            "duration": 95,
+            "airplane": "Airbus A320neo",
+            "airline": "Air India",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+            "travel_class": "Economy",
+            "flight_number": "AI 2462",
+            "legroom": "28 in",
+            "extensions": [
+              "Below average legroom (28 in)",
+              "In-seat USB outlet",
+              "Stream media to your device",
+              "Carbon emissions estimate: 66 kg"
+            ],
+            "often_delayed_by_over_30_min": true
+          }
+        ],
+        "total_duration": 95,
+        "carbon_emissions": {
+          "this_flight": 66000,
+          "typical_for_this_route": 68000,
+          "difference_percent": -3
+        },
+        "price": 4327,
+        "type": "One way",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+        "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZ1pCU1RJME5qSWFDZ2puSVJBQUdnTkpUbEk0SEhDUEpRPT0iLFtbIklYTCIsIjIwMjYtMDMtMDUiLCJERUwiLG51bGwsIkFJIiwiMjQ2MiJdXV0="
+      }
+    ],
+    "other_flights": [
+      {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "Kushok Bakula Rimpochee Airport",
+              "id": "IXL",
+              "time": "2026-03-05 13:30"
+            },
+            "arrival_airport": {
+              "name": "Indira Gandhi International Airport",
+              "id": "DEL",
+              "time": "2026-03-05 14:50"
+            },
+            "duration": 80,
+            "airplane": "Airbus A320neo",
+            "airline": "IndiGo",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+            "travel_class": "Economy",
+            "flight_number": "6E 6003",
+            "legroom": "28 in",
+            "extensions": [
+              "Below average legroom (28 in)",
+              "Carbon emissions estimate: 59 kg"
+            ],
+            "often_delayed_by_over_30_min": true
+          }
+        ],
+        "total_duration": 80,
+        "carbon_emissions": {
+          "this_flight": 59000,
+          "typical_for_this_route": 68000,
+          "difference_percent": -13
+        },
+        "price": 3856,
+        "type": "One way",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+        "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZ1kyUlRZd01ETWFDZ2lRSGhBQUdnTkpUbEk0SEhDS0lRPT0iLFtbIklYTCIsIjIwMjYtMDMtMDUiLCJERUwiLG51bGwsIjZFIiwiNjAwMyJdXV0="
+      },
+      {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "Kushok Bakula Rimpochee Airport",
+              "id": "IXL",
+              "time": "2026-03-05 12:10"
+            },
+            "arrival_airport": {
+              "name": "Indira Gandhi International Airport",
+              "id": "DEL",
+              "time": "2026-03-05 13:35"
+            },
+            "duration": 85,
+            "airplane": "Airbus A320neo",
+            "airline": "Air India",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+            "travel_class": "Economy",
+            "flight_number": "AI 2464",
+            "legroom": "28 in",
+            "extensions": [
+              "Below average legroom (28 in)",
+              "In-seat USB outlet",
+              "Stream media to your device",
+              "Carbon emissions estimate: 66 kg"
+            ]
+          }
+        ],
+        "total_duration": 85,
+        "carbon_emissions": {
+          "this_flight": 66000,
+          "typical_for_this_route": 68000,
+          "difference_percent": -3
+        },
+        "price": 4891,
+        "type": "One way",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+        "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZ1pCU1RJME5qUWFDZ2liSmhBQUdnTkpUbEk0SEhENktRPT0iLFtbIklYTCIsIjIwMjYtMDMtMDUiLCJERUwiLG51bGwsIkFJIiwiMjQ2NCJdXV0="
+      },
+      {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "Kushok Bakula Rimpochee Airport",
+              "id": "IXL",
+              "time": "2026-03-05 07:55"
+            },
+            "arrival_airport": {
+              "name": "Indira Gandhi International Airport",
+              "id": "DEL",
+              "time": "2026-03-05 09:25"
+            },
+            "duration": 90,
+            "airplane": "Boeing 737",
+            "airline": "SpiceJet",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
+            "travel_class": "Economy",
+            "flight_number": "SG 122",
+            "legroom": "29 in",
+            "extensions": [
+              "Below average legroom (29 in)",
+              "Stream media to your device",
+              "Carbon emissions estimate: 79 kg"
+            ]
+          }
+        ],
+        "total_duration": 90,
+        "carbon_emissions": {
+          "this_flight": 80000,
+          "typical_for_this_route": 68000,
+          "difference_percent": 18
+        },
+        "price": 5230,
+        "type": "One way",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
+        "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZ1ZUUnpFeU1ob0tDTzRvRUFBYUEwbE9VamdjY080cyIsW1siSVhMIiwiMjAyNi0wMy0wNSIsIkRFTCIsbnVsbCwiU0ciLCIxMjIiXV1d"
+      },
+      {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "Kushok Bakula Rimpochee Airport",
+              "id": "IXL",
+              "time": "2026-03-05 08:45"
+            },
+            "arrival_airport": {
+              "name": "Srinagar International Airport",
+              "id": "SXR",
+              "time": "2026-03-05 09:35"
+            },
+            "duration": 50,
+            "airplane": "Airbus A320neo",
+            "airline": "Air India",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+            "travel_class": "Economy",
+            "flight_number": "AI 2431",
+            "legroom": "28 in",
+            "extensions": [
+              "Below average legroom (28 in)",
+              "In-seat USB outlet",
+              "Stream media to your device",
+              "Carbon emissions estimate: 40 kg"
+            ]
+          },
+          {
+            "departure_airport": {
+              "name": "Srinagar International Airport",
+              "id": "SXR",
+              "time": "2026-03-05 10:20"
+            },
+            "arrival_airport": {
+              "name": "Indira Gandhi International Airport",
+              "id": "DEL",
+              "time": "2026-03-05 12:10"
+            },
+            "duration": 110,
+            "airplane": "Airbus A321",
+            "airline": "Air India Express",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
+            "travel_class": "Economy",
+            "flight_number": "IX 1037",
+            "ticket_also_sold_by": ["Air India"],
+            "extensions": ["Carbon emissions estimate: 84 kg"]
+          }
+        ],
+        "layovers": [
+          {
+            "duration": 45,
+            "name": "Srinagar International Airport",
+            "id": "SXR"
+          }
+        ],
+        "total_duration": 205,
+        "carbon_emissions": {
+          "this_flight": 125000,
+          "typical_for_this_route": 68000,
+          "difference_percent": 84
+        },
+        "price": 8134,
+        "type": "One way",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+        "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZzFCU1RJME16RjhTVmd4TURNM0dnb0l4ajhRQUJvRFNVNVNPQnh3NDBVPSIsW1siSVhMIiwiMjAyNi0wMy0wNSIsIlNYUiIsbnVsbCwiQUkiLCIyNDMxIl0sWyJTWFIiLCIyMDI2LTAzLTA1IiwiREVMIixudWxsLCJJWCIsIjEwMzciXV1d"
+      }
+    ],
+    "price_insights": {
+      "lowest_price": 3856,
+      "price_level": "typical",
+      "typical_price_range": [3500, 4600],
+      "price_history": [
+        [1767033000, 4520],
+        [1767119400, 4519],
+        [1767205800, 4522],
+        [1767292200, 4522],
+        [1767378600, 4835],
+        [1767465000, 4523],
+        [1767551400, 4522],
+        [1767637800, 4420],
+        [1767724200, 4409],
+        [1767810600, 5538],
+        [1767897000, 5011],
+        [1767983400, 5016],
+        [1768069800, 5017],
+        [1768156200, 5014],
+        [1768242600, 3294],
+        [1768329000, 3293],
+        [1768415400, 3291],
+        [1768501800, 3292],
+        [1768588200, 3294],
+        [1768674600, 4521],
+        [1768761000, 4048],
+        [1768847400, 4043],
+        [1768933800, 3855],
+        [1769020200, 3852],
+        [1769106600, 3854],
+        [1769193000, 4255],
+        [1769279400, 4255],
+        [1769365800, 4254],
+        [1769452200, 4249],
+        [1769538600, 4045],
+        [1769625000, 4038],
+        [1769711400, 4043],
+        [1769797800, 4041],
+        [1769884200, 3952],
+        [1769970600, 3924],
+        [1770057000, 3883],
+        [1770143400, 3489],
+        [1770229800, 3494],
+        [1770316200, 3852],
+        [1770402600, 3854],
+        [1770489000, 3855],
+        [1770575400, 3850],
+        [1770661800, 3852],
+        [1770748200, 3853],
+        [1770834600, 3853],
+        [1770921000, 3852],
+        [1771007400, 3855],
+        [1771093800, 3856],
+        [1771180200, 3855],
+        [1771266600, 3854],
+        [1771353000, 3853],
+        [1771439400, 3852],
+        [1771525800, 3847],
+        [1771612200, 3854],
+        [1771698600, 3855],
+        [1771785000, 3854],
+        [1771871400, 3853],
+        [1771957800, 3853],
+        [1772044200, 3853],
+        [1772130600, 3853],
+        [1772217000, 3856]
+      ]
+    },
+    "airports": [
+      {
+        "departure": [
+          {
+            "airport": {
+              "id": "IXL",
+              "name": "Kushok Bakula Rimpochee Airport"
+            },
+            "city": "Leh",
+            "country_code": "ZZ",
+            "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQkTO60Bloy_fAZAL01-83I5lvphLBZfNRn3wh-4kogFFCDTJm3xEZvyxTTTo5u16zmAzcoAzU96r4NCQ",
+            "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTr-pXSdoXAIzdu_W1ppJ41TxbTQ96OLRFwG56MckQIpq1505YzmWNScU_VGB5aH_LPsyBE7F25pPqa5zk9IVtv8TUZ3uHqM40nkalSAlU"
+          }
+        ],
+        "arrival": [
+          {
+            "airport": {
+              "id": "DEL",
+              "name": "Indira Gandhi International Airport"
+            },
+            "city": "New Delhi",
+            "country": "India",
+            "country_code": "IN",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkRqzwP-0z4pH29-KifVzfrxM5wwXx56g3Hoo_ebldH9Fy8a8EjGqPzd3fZqJSKoE5tSIRC2iGJxgqzQ",
+            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY7HqndXM-ihFCu1qUKosYR--X_yXSd-0mkQHeSUaG5rkpq5Y6uxD8CMmYUCdngZE7mV0onuN2zv_aVxGGO8xv4FMcpMlWvbXdvJFcemY"
+          }
+        ]
+      }
+    ]
+  }
+}

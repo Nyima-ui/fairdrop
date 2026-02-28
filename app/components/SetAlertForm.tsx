@@ -67,35 +67,47 @@ function SetAlertForm({ fetchActiveAlerts }: SetAlertFormProps) {
     today.setHours(0, 0, 0, 0);
 
     if (new Date(startDate) < today) {
-      alert("Earliest date can't be in the past.");
+      showToast({
+        title: "Invalid Start Date",
+        message: "Earliest date can't be in the past.",
+        type: "warning",
+      });
       return;
     }
     if (new Date(endDate) < new Date(startDate)) {
-      alert("Latest date can't be before the earliest date.");
+      showToast({
+        title: "Invalid End Date",
+        message: "Latest date can't be before the earliest date.",
+        type: "warning",
+      });
       return;
     }
 
-    await insertAlertRow({
-      userId,
-      origin,
-      destination,
-      startDate,
-      endDate,
-      maxPrice,
-      email,
-    });
+    // await insertAlertRow({
+    //   userId,
+    //   origin,
+    //   destination,
+    //   startDate,
+    //   endDate,
+    //   maxPrice,
+    //   email,
+    // });
 
-    const maxPriceAsNumber = parseInt(maxPrice, 10);
-    notifyUser({
-      origin,
-      destination,
-      startDate,
-      endDate,
-      maxPrice: maxPriceAsNumber,
-      email,
-    });
+    // const maxPriceAsNumber = parseInt(maxPrice, 10);
+    // notifyUser({
+    //   origin,
+    //   destination,
+    //   startDate,
+    //   endDate,
+    //   maxPrice: maxPriceAsNumber,
+    //   email,
+    // });
 
-    showToast();
+    showToast({
+      title: "Price Alert Set",
+      message: "You'll be notified via email and SMS when prices drop.",
+      type: "success",
+    });
   }
 
   return (

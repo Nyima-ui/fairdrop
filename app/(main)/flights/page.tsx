@@ -4,6 +4,7 @@ import Search from "../../components/Search";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { FlightProps } from "@/types/component";
+import { useToast } from "@/context/ToastContext";
 
 interface FlightResults {
   origin: string;
@@ -20,6 +21,7 @@ const FlightResults = () => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { showToast } = useToast();
 
   useEffect(() => {
     async function fetchFlights() {
@@ -29,13 +31,20 @@ const FlightResults = () => {
 
       if (!origin || !destination || !date) return;
       if (origin === destination) {
-        alert(
-          "Origin and destination cannot be the same. Please choose different locations.",
-        );
+        showToast({
+          title: "Invalid Route",
+          message:
+            "Origin and destination cannot be the same. Please choose different locations.",
+          type: "warning",
+        });
         return;
       }
       if (new Date(date) < new Date()) {
-        alert("Please select a future date for your flight.");
+        showToast({
+          title: "Invalid Date",
+          message: "Please select a future date for your flight.",
+          type: "warning",
+        });
         return;
       }
 
