@@ -23,7 +23,6 @@ export async function sendEmail({ to, subject, html }: SendEmailProps) {
     `Subject: ${encodedSubject}`,
     "MIME-version: 1.0",
     "Content-Type: text/html; charset=utf-8",
-    "Content-Transfer-Encoding: base64",
     "",
     html,
   ].join("\n");
@@ -38,4 +37,6 @@ export async function sendEmail({ to, subject, html }: SendEmailProps) {
     userId: "me",
     requestBody: { raw: encodedMessage },
   });
+
+  console.log("email sent");
 }
