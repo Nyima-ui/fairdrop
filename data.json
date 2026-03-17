@@ -1,296 +1,1945 @@
-[
-  {
-    "flights": [
-      {
-        "departure_airport": {
-          "name": "Kushok Bakula Rimpochee Airport",
-          "id": "IXL",
-          "time": "2026-03-05 11:10"
-        },
-        "arrival_airport": {
-          "name": "Indira Gandhi International Airport",
-          "id": "DEL",
-          "time": "2026-03-05 12:30"
-        },
-        "duration": 80,
-        "airplane": "Airbus A320neo",
-        "airline": "IndiGo",
-        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-        "travel_class": "Economy",
-        "flight_number": "6E 2584",
-        "legroom": "28 in",
-        "extensions": [
-          "Below average legroom (28 in)",
-          "Carbon emissions estimate: 59 kg"
-        ],
-        "often_delayed_by_over_30_min": true
-      }
-    ],
-    "total_duration": 80,
-    "carbon_emissions": {
-      "this_flight": 59000,
-      "typical_for_this_route": 68000,
-      "difference_percent": -13
-    },
-    "price": 3856,
-    "type": "One way",
-    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-    "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZ1kyUlRJMU9EUWFDZ2lRSGhBQUdnTkpUbEk0SEhDS0lRPT0iLFtbIklYTCIsIjIwMjYtMDMtMDUiLCJERUwiLG51bGwsIjZFIiwiMjU4NCJdXV0="
+{
+  "search_metadata": {
+    "id": "69b8b565ee028ae453a7bb32",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/6xdCXy7xHIxrzTofSQL2BA/69b8b565ee028ae453a7bb32.json",
+    "created_at": "2026-03-17 01:59:01 UTC",
+    "processed_at": "2026-03-17 01:59:01 UTC",
+    "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=INR&tfs=CBwQAhoeEgoyMDI2LTA0LTA0agcIARIDQkxScgcIARIDREVMQgEBSAFwAZgBAg&tfu=EgIIAQ",
+    "raw_html_file": "https://serpapi.com/searches/6xdCXy7xHIxrzTofSQL2BA/69b8b565ee028ae453a7bb32.html",
+    "prettify_html_file": "https://serpapi.com/searches/6xdCXy7xHIxrzTofSQL2BA/69b8b565ee028ae453a7bb32.prettify",
+    "total_time_taken": 0.64
   },
-  {
-    "flights": [
-      {
-        "departure_airport": {
-          "name": "Kushok Bakula Rimpochee Airport",
-          "id": "IXL",
-          "time": "2026-03-05 12:00"
-        },
-        "arrival_airport": {
-          "name": "Indira Gandhi International Airport",
-          "id": "DEL",
-          "time": "2026-03-05 13:30"
-        },
-        "duration": 90,
-        "airplane": "Boeing 737",
-        "airline": "SpiceJet",
-        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
-        "travel_class": "Economy",
-        "flight_number": "SG 124",
-        "legroom": "29 in",
-        "extensions": [
-          "Below average legroom (29 in)",
-          "Stream media to your device",
-          "Carbon emissions estimate: 79 kg"
-        ],
-        "often_delayed_by_over_30_min": true
-      }
-    ],
-    "total_duration": 90,
-    "carbon_emissions": {
-      "this_flight": 80000,
-      "typical_for_this_route": 68000,
-      "difference_percent": 18
-    },
-    "price": 4310,
-    "type": "One way",
-    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
-    "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZ1ZUUnpFeU5Cb0tDTlloRUFBYUEwbE9VamdjY1B3ayIsW1siSVhMIiwiMjAyNi0wMy0wNSIsIkRFTCIsbnVsbCwiU0ciLCIxMjQiXV1d"
+  "search_parameters": {
+    "engine": "google_flights",
+    "hl": "en",
+    "gl": "us",
+    "type": "2",
+    "departure_id": "BLR",
+    "arrival_id": "DEL",
+    "outbound_date": "2026-04-04",
+    "currency": "INR"
   },
-  {
-    "flights": [
-      {
-        "departure_airport": {
-          "name": "Kushok Bakula Rimpochee Airport",
-          "id": "IXL",
-          "time": "2026-03-05 12:35"
-        },
-        "arrival_airport": {
-          "name": "Indira Gandhi International Airport",
-          "id": "DEL",
-          "time": "2026-03-05 14:10"
-        },
-        "duration": 95,
-        "airplane": "Airbus A320neo",
-        "airline": "Air India",
-        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-        "travel_class": "Economy",
-        "flight_number": "AI 2462",
-        "legroom": "28 in",
-        "extensions": [
-          "Below average legroom (28 in)",
-          "In-seat USB outlet",
-          "Stream media to your device",
-          "Carbon emissions estimate: 66 kg"
-        ],
-        "often_delayed_by_over_30_min": true
-      }
-    ],
-    "total_duration": 95,
-    "carbon_emissions": {
-      "this_flight": 66000,
-      "typical_for_this_route": 68000,
-      "difference_percent": -3
-    },
-    "price": 4327,
-    "type": "One way",
-    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-    "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZ1pCU1RJME5qSWFDZ2puSVJBQUdnTkpUbEk0SEhDUEpRPT0iLFtbIklYTCIsIjIwMjYtMDMtMDUiLCJERUwiLG51bGwsIkFJIiwiMjQ2MiJdXV0="
-  },
-  {
-    "flights": [
-      {
-        "departure_airport": {
-          "name": "Kushok Bakula Rimpochee Airport",
-          "id": "IXL",
-          "time": "2026-03-05 13:30"
-        },
-        "arrival_airport": {
-          "name": "Indira Gandhi International Airport",
-          "id": "DEL",
-          "time": "2026-03-05 14:50"
-        },
-        "duration": 80,
-        "airplane": "Airbus A320neo",
-        "airline": "IndiGo",
-        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-        "travel_class": "Economy",
-        "flight_number": "6E 6003",
-        "legroom": "28 in",
-        "extensions": [
-          "Below average legroom (28 in)",
-          "Carbon emissions estimate: 59 kg"
-        ],
-        "often_delayed_by_over_30_min": true
-      }
-    ],
-    "total_duration": 80,
-    "carbon_emissions": {
-      "this_flight": 59000,
-      "typical_for_this_route": 68000,
-      "difference_percent": -13
-    },
-    "price": 3856,
-    "type": "One way",
-    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-    "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZ1kyUlRZd01ETWFDZ2lRSGhBQUdnTkpUbEk0SEhDS0lRPT0iLFtbIklYTCIsIjIwMjYtMDMtMDUiLCJERUwiLG51bGwsIjZFIiwiNjAwMyJdXV0="
-  },
-  {
-    "flights": [
-      {
-        "departure_airport": {
-          "name": "Kushok Bakula Rimpochee Airport",
-          "id": "IXL",
-          "time": "2026-03-05 12:10"
-        },
-        "arrival_airport": {
-          "name": "Indira Gandhi International Airport",
-          "id": "DEL",
-          "time": "2026-03-05 13:35"
-        },
-        "duration": 85,
-        "airplane": "Airbus A320neo",
-        "airline": "Air India",
-        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-        "travel_class": "Economy",
-        "flight_number": "AI 2464",
-        "legroom": "28 in",
-        "extensions": [
-          "Below average legroom (28 in)",
-          "In-seat USB outlet",
-          "Stream media to your device",
-          "Carbon emissions estimate: 66 kg"
-        ]
-      }
-    ],
-    "total_duration": 85,
-    "carbon_emissions": {
-      "this_flight": 66000,
-      "typical_for_this_route": 68000,
-      "difference_percent": -3
-    },
-    "price": 4891,
-    "type": "One way",
-    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-    "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZ1pCU1RJME5qUWFDZ2liSmhBQUdnTkpUbEk0SEhENktRPT0iLFtbIklYTCIsIjIwMjYtMDMtMDUiLCJERUwiLG51bGwsIkFJIiwiMjQ2NCJdXV0="
-  },
-  {
-    "flights": [
-      {
-        "departure_airport": {
-          "name": "Kushok Bakula Rimpochee Airport",
-          "id": "IXL",
-          "time": "2026-03-05 07:55"
-        },
-        "arrival_airport": {
-          "name": "Indira Gandhi International Airport",
-          "id": "DEL",
-          "time": "2026-03-05 09:25"
-        },
-        "duration": 90,
-        "airplane": "Boeing 737",
-        "airline": "SpiceJet",
-        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
-        "travel_class": "Economy",
-        "flight_number": "SG 122",
-        "legroom": "29 in",
-        "extensions": [
-          "Below average legroom (29 in)",
-          "Stream media to your device",
-          "Carbon emissions estimate: 79 kg"
-        ]
-      }
-    ],
-    "total_duration": 90,
-    "carbon_emissions": {
-      "this_flight": 80000,
-      "typical_for_this_route": 68000,
-      "difference_percent": 18
-    },
-    "price": 5230,
-    "type": "One way",
-    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
-    "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZ1ZUUnpFeU1ob0tDTzRvRUFBYUEwbE9VamdjY080cyIsW1siSVhMIiwiMjAyNi0wMy0wNSIsIkRFTCIsbnVsbCwiU0ciLCIxMjIiXV1d"
-  },
-  {
-    "flights": [
-      {
-        "departure_airport": {
-          "name": "Kushok Bakula Rimpochee Airport",
-          "id": "IXL",
-          "time": "2026-03-05 08:45"
-        },
-        "arrival_airport": {
-          "name": "Srinagar International Airport",
-          "id": "SXR",
-          "time": "2026-03-05 09:35"
-        },
-        "duration": 50,
-        "airplane": "Airbus A320neo",
-        "airline": "Air India",
-        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-        "travel_class": "Economy",
-        "flight_number": "AI 2431",
-        "legroom": "28 in",
-        "extensions": [
-          "Below average legroom (28 in)",
-          "In-seat USB outlet",
-          "Stream media to your device",
-          "Carbon emissions estimate: 40 kg"
-        ]
+  "best_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 01:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 03:50"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 839",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
       },
-      {
-        "departure_airport": {
-          "name": "Srinagar International Airport",
-          "id": "SXR",
-          "time": "2026-03-05 10:20"
-        },
-        "arrival_airport": {
-          "name": "Indira Gandhi International Airport",
-          "id": "DEL",
-          "time": "2026-03-05 12:10"
-        },
-        "duration": 110,
-        "airplane": "Airbus A321",
-        "airline": "Air India Express",
-        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-        "travel_class": "Economy",
-        "flight_number": "IX 1037",
-        "ticket_also_sold_by": ["Air India"],
-        "extensions": ["Carbon emissions estimate: 84 kg"]
-      }
-    ],
-    "layovers": [
-      { "duration": 45, "name": "Srinagar International Airport", "id": "SXR" }
-    ],
-    "total_duration": 205,
-    "carbon_emissions": {
-      "this_flight": 125000,
-      "typical_for_this_route": 68000,
-      "difference_percent": 84
+      "price": 7711,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRnek9Sb0tDSjg4RUFBYUEwbE9VamdjY0tOQiIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCI4MzkiXV1d"
     },
-    "price": 8134,
-    "type": "One way",
-    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
-    "booking_token": "WyJDalJJTUZaYU0xVjBiVTg1U1hkQlJsaFhibWRDUnkwdExTMHRMUzB0TFhaMFluSXlOa0ZCUVVGQlIyMXBXa3QzUm5OWU5IRkJFZzFCU1RJME16RjhTVmd4TURNM0dnb0l4ajhRQUJvRFNVNVNPQnh3NDBVPSIsW1siSVhMIiwiMjAyNi0wMy0wNSIsIlNYUiIsbnVsbCwiQUkiLCIyNDMxIl0sWyJTWFIiLCIyMDI2LTAzLTA1IiwiREVMIixudWxsLCJJWCIsIjEwMzciXV1d"
-  }
-]
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 05:55"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 08:50"
+          },
+          "duration": 175,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Akasa Air",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png",
+          "travel_class": "Economy",
+          "flight_number": "QP 1823",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 122 kg"
+          ]
+        }
+      ],
+      "total_duration": 175,
+      "carbon_emissions": {
+        "this_flight": 122000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -13
+      },
+      "price": 7908,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pSVURFNE1qTWFDZ2prUFJBQUdnTkpUbEk0SEhENVFnPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIlFQIiwiMTgyMyJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 22:30"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-05 01:25"
+          },
+          "duration": 175,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2488",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 175,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 7918,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJME9EZ2FDZ2p1UFJBQUdnTkpUbEk0SEhDRFF3PT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjQ4OCJdXV0="
+    }
+  ],
+  "other_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 18:15"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 21:05"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 6034",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 7711,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1kyUlRZd016UWFDZ2lmUEJBQUdnTkpUbEk0SEhDalFRPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIjZFIiwiNjAzNCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 20:40"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 23:30"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 817",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 7711,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRneE54b0tDSjg4RUFBYUEwbE9VamdjY0tOQiIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCI4MTciXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 22:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-05 00:50"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 6406",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 7711,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1kyUlRZME1EWWFDZ2lmUEJBQUdnTkpUbEk0SEhDalFRPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIjZFIiwiNjQwNiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 23:30"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-05 02:20"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 2313",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 7711,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1kyUlRJek1UTWFDZ2lmUEJBQUdnTkpUbEk0SEhDalFRPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIjZFIiwiMjMxMyJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 22:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-05 00:55"
+          },
+          "duration": 175,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2814",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 175,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 7918,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJNE1UUWFDZ2p1UFJBQUdnTkpUbEk0SEhDRFF3PT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjgxNCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 19:40"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 22:40"
+          },
+          "duration": 180,
+          "airplane": "Airbus A350",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2665",
+          "legroom": "31 in",
+          "extensions": [
+            "Average legroom (31 in)",
+            "Free Wi-Fi",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 134 kg"
+          ]
+        }
+      ],
+      "total_duration": 180,
+      "carbon_emissions": {
+        "this_flight": 134000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -5
+      },
+      "price": 8044,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJMk5qVWFDZ2pzUGhBQUdnTkpUbEk0SEhDTVJBPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjY2NSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 03:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 05:50"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 804",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 8127,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRnd05Cb0tDTDgvRUFBYUEwbE9VamdjY09aRSIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCI4MDQiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 05:05"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 07:55"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 836",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 8127,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRnek5ob0tDTDgvRUFBYUEwbE9VamdjY09aRSIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCI4MzYiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 08:15"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 11:05"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 849",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 8127,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRnME9Sb0tDTDgvRUFBYUEwbE9VamdjY09aRSIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCI4NDkiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 10:45"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 13:35"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 175",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 8127,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRFM05Sb0tDTDgvRUFBYUEwbE9VamdjY09aRSIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCIxNzUiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 12:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 14:50"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 809",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 8127,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRnd09Sb0tDTDgvRUFBYUEwbE9VamdjY09aRSIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCI4MDkiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 13:15"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 16:05"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 869",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 8127,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRnMk9Sb0tDTDgvRUFBYUEwbE9VamdjY09aRSIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCI4NjkiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 14:30"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 17:20"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 840",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 8127,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRnME1Cb0tDTDgvRUFBYUEwbE9VamdjY09aRSIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCI4NDAiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 15:45"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 18:35"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 860",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 8127,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRnMk1Cb0tDTDgvRUFBYUEwbE9VamdjY09aRSIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCI4NjAiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 16:55"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 19:50"
+          },
+          "duration": 175,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 6039",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 175,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 8127,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1kyUlRZd016a2FDZ2kvUHhBQUdnTkpUbEk0SEhEbVJBPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIjZFIiwiNjAzOSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 19:30"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 22:15"
+          },
+          "duration": 165,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 870",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 165,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 8127,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRnM01Cb0tDTDgvRUFBYUEwbE9VamdjY09aRSIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCI4NzAiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 03:55"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 07:00"
+          },
+          "duration": 185,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Akasa Air",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png",
+          "travel_class": "Economy",
+          "flight_number": "QP 1811",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 121 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 185,
+      "carbon_emissions": {
+        "this_flight": 122000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -13
+      },
+      "price": 8185,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pSVURFNE1URWFDZ2o1UHhBQUdnTkpUbEk0SEhDbFJRPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIlFQIiwiMTgxMSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 05:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 07:50"
+          },
+          "duration": 170,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Akasa Air",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png",
+          "travel_class": "Economy",
+          "flight_number": "QP 1359",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 121 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 122000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -13
+      },
+      "price": 8326,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pSVURFek5Ua2FDZ2lHUVJBQUdnTkpUbEk0SEhDK1JnPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIlFQIiwiMTM1OSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 06:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 08:45"
+          },
+          "duration": 165,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2810",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 165,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8332,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJNE1UQWFDZ2lNUVJBQUdnTkpUbEk0SEhERVJnPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjgxMCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 15:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 18:00"
+          },
+          "duration": 180,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2511",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 180,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8348,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJMU1URWFDZ2ljUVJBQUdnTkpUbEk0SEhEVlJnPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjUxMSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 05:05"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 07:55"
+          },
+          "duration": 170,
+          "airplane": "Boeing 737",
+          "airline": "SpiceJet",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
+          "travel_class": "Economy",
+          "flight_number": "SG 529",
+          "legroom": "29 in",
+          "extensions": [
+            "Below average legroom (29 in)",
+            "Stream media to your device",
+            "Carbon emissions estimate: 136 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 137000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -3
+      },
+      "price": 8388,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1ZUUnpVeU9Sb0tDTVJCRUFBYUEwbE9VamdjY0lGSCIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiU0ciLCI1MjkiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 07:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 10:00"
+          },
+          "duration": 180,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2654",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 180,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8443,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJMk5UUWFDZ2o3UVJBQUdnTkpUbEk0SEhDOFJ3PT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjY1NCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 20:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 22:45"
+          },
+          "duration": 165,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2818",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        }
+      ],
+      "total_duration": 165,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8443,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJNE1UZ2FDZ2o3UVJBQUdnTkpUbEk0SEhDOFJ3PT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjgxOCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 18:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 20:45"
+          },
+          "duration": 165,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2820",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 165,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8579,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJNE1qQWFDZ2lEUXhBQUdnTkpUbEk0SEhEUVNBPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjgyMCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 08:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 10:55"
+          },
+          "duration": 175,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2808",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 175,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8647,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJNE1EZ2FDZ2pIUXhBQUdnTkpUbEk0SEhDWlNRPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjgwOCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 14:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 16:45"
+          },
+          "duration": 165,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2486",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 165,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8647,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJME9EWWFDZ2pIUXhBQUdnTkpUbEk0SEhDWlNRPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjQ4NiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 14:30"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 17:15"
+          },
+          "duration": 165,
+          "airplane": "Boeing 787",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 428",
+          "legroom": "33 in",
+          "extensions": [
+            "Above average legroom (33 in)",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 140 kg"
+          ]
+        }
+      ],
+      "total_duration": 165,
+      "carbon_emissions": {
+        "this_flight": 140000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8647,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1ZCU1RReU9Cb0tDTWRERUFBYUEwbE9VamdjY0psSiIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiQUkiLCI0MjgiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 16:30"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 19:25"
+          },
+          "duration": 175,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2418",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 175,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8647,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJME1UZ2FDZ2pIUXhBQUdnTkpUbEk0SEhDWlNRPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjQxOCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 19:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 21:45"
+          },
+          "duration": 165,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2802",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 165,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8647,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJNE1ESWFDZ2pIUXhBQUdnTkpUbEk0SEhDWlNRPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjgwMiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 05:30"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 08:25"
+          },
+          "duration": 175,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2414",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 175,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8674,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJME1UUWFDZ2ppUXhBQUdnTkpUbEk0SEhDM1NRPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjQxNCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 10:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 13:00"
+          },
+          "duration": 180,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2804",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 180,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8784,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJNE1EUWFDZ2pRUkJBQUdnTkpUbEk0SEhDdVNnPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjgwNCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 11:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 14:00"
+          },
+          "duration": 180,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2406",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 180,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 8784,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJME1EWWFDZ2pRUkJBQUdnTkpUbEk0SEhDdVNnPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjQwNiJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 18:25"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 21:20"
+          },
+          "duration": 175,
+          "airplane": "Boeing 737",
+          "airline": "SpiceJet",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
+          "travel_class": "Economy",
+          "flight_number": "SG 189",
+          "legroom": "29 in",
+          "extensions": [
+            "Below average legroom (29 in)",
+            "Stream media to your device",
+            "Carbon emissions estimate: 136 kg"
+          ]
+        }
+      ],
+      "total_duration": 175,
+      "carbon_emissions": {
+        "this_flight": 137000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -3
+      },
+      "price": 8914,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1ZUUnpFNE9Sb0tDTkpGRUFBYUEwbE9VamdjY0x0TCIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiU0ciLCIxODkiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 13:05"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 16:00"
+          },
+          "duration": 175,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Akasa Air",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png",
+          "travel_class": "Economy",
+          "flight_number": "QP 1821",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 121 kg"
+          ]
+        }
+      ],
+      "total_duration": 175,
+      "carbon_emissions": {
+        "this_flight": 122000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -13
+      },
+      "price": 8923,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pSVURFNE1qRWFDZ2piUlJBQUdnTkpUbEk0SEhERVN3PT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIlFQIiwiMTgyMSJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 07:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 09:50"
+          },
+          "duration": 170,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 844",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 9043,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRnME5Cb0tDTk5HRUFBYUEwbE9VamdjY01aTSIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCI4NDQiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 00:15"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 03:10"
+          },
+          "duration": 175,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2758",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "total_duration": 175,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 9340,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJM05UZ2FDZ2o4U0JBQUdnTkpUbEk0SEhDSVR3PT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjc1OCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 09:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 12:00"
+          },
+          "duration": 180,
+          "airplane": "Airbus A320neo",
+          "airline": "Air India",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+          "travel_class": "Economy",
+          "flight_number": "AI 2868",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "In-seat USB outlet",
+            "Stream media to your device",
+            "Carbon emissions estimate: 139 kg"
+          ]
+        }
+      ],
+      "total_duration": 180,
+      "carbon_emissions": {
+        "this_flight": 139000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "price": 9493,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pCU1RJNE5qZ2FDZ2lWU2hBQUdnTkpUbEk0SEhDdVVBPT0iLFtbIkJMUiIsIjIwMjYtMDQtMDQiLCJERUwiLG51bGwsIkFJIiwiMjg2OCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 09:30"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 12:30"
+          },
+          "duration": 180,
+          "airplane": "Airbus A321neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 830",
+          "legroom": "28 in",
+          "extensions": [
+            "Below average legroom (28 in)",
+            "Carbon emissions estimate: 120 kg"
+          ]
+        }
+      ],
+      "total_duration": 180,
+      "carbon_emissions": {
+        "this_flight": 120000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -15
+      },
+      "price": 10657,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1UyUlRnek1Cb0tDS0ZURUFBYUEwbE9VamdjY0p0YSIsW1siQkxSIiwiMjAyNi0wNC0wNCIsIkRFTCIsbnVsbCwiNkUiLCI4MzAiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 06:00"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 08:55"
+          },
+          "duration": 175,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Air India Express",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
+          "travel_class": "Economy",
+          "flight_number": "IX 2542",
+          "extensions": [
+            "Carbon emissions estimate: 140 kg"
+          ]
+        }
+      ],
+      "total_duration": 175,
+      "carbon_emissions": {
+        "this_flight": 140000,
+        "typical_for_this_route": 141000,
+        "difference_percent": -1
+      },
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pKV0RJMU5ESTRIQT09IixbWyJCTFIiLCIyMDI2LTA0LTA0IiwiREVMIixudWxsLCJJWCIsIjI1NDIiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-04-04 17:35"
+          },
+          "arrival_airport": {
+            "name": "Indira Gandhi International Airport",
+            "id": "DEL",
+            "time": "2026-04-04 20:25"
+          },
+          "duration": 170,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "Air India Express",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
+          "travel_class": "Economy",
+          "flight_number": "IX 1040",
+          "extensions": [
+            "Carbon emissions estimate: 152 kg"
+          ]
+        }
+      ],
+      "total_duration": 170,
+      "carbon_emissions": {
+        "this_flight": 152000,
+        "typical_for_this_route": 141000,
+        "difference_percent": 8
+      },
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
+      "booking_token": "WyJDalJJWHpCcllYWTJjbkJKUVdOQlFYTjVkRUZDUnkwdExTMHRMUzB0TFhscFltdHdNMEZCUVVGQlIyMDBkRmRaUmtwSFowRkJFZ1pKV0RFd05EQTRIQT09IixbWyJCTFIiLCIyMDI2LTA0LTA0IiwiREVMIixudWxsLCJJWCIsIjEwNDAiXV1d"
+    }
+  ],
+  "price_insights": {
+    "lowest_price": 7711,
+    "price_level": "high",
+    "typical_price_range": [
+      5600,
+      7300
+    ],
+    "price_history": [
+      [
+        1768501800,
+        5494
+      ],
+      [
+        1768588200,
+        6372
+      ],
+      [
+        1768674600,
+        6940
+      ],
+      [
+        1768761000,
+        6940
+      ],
+      [
+        1768847400,
+        6940
+      ],
+      [
+        1768933800,
+        6940
+      ],
+      [
+        1769020200,
+        6940
+      ],
+      [
+        1769106600,
+        6940
+      ],
+      [
+        1769193000,
+        6940
+      ],
+      [
+        1769279400,
+        6940
+      ],
+      [
+        1769365800,
+        6940
+      ],
+      [
+        1769452200,
+        6940
+      ],
+      [
+        1769538600,
+        6940
+      ],
+      [
+        1769625000,
+        6644
+      ],
+      [
+        1769711400,
+        6644
+      ],
+      [
+        1769797800,
+        6644
+      ],
+      [
+        1769884200,
+        6094
+      ],
+      [
+        1769970600,
+        6044
+      ],
+      [
+        1770057000,
+        6044
+      ],
+      [
+        1770143400,
+        6044
+      ],
+      [
+        1770229800,
+        6044
+      ],
+      [
+        1770316200,
+        6594
+      ],
+      [
+        1770402600,
+        6940
+      ],
+      [
+        1770489000,
+        6940
+      ],
+      [
+        1770575400,
+        6940
+      ],
+      [
+        1770661800,
+        6940
+      ],
+      [
+        1770748200,
+        6940
+      ],
+      [
+        1770834600,
+        6940
+      ],
+      [
+        1770921000,
+        6940
+      ],
+      [
+        1771007400,
+        6940
+      ],
+      [
+        1771093800,
+        6940
+      ],
+      [
+        1771180200,
+        6940
+      ],
+      [
+        1771266600,
+        6940
+      ],
+      [
+        1771353000,
+        6940
+      ],
+      [
+        1771439400,
+        6940
+      ],
+      [
+        1771525800,
+        6940
+      ],
+      [
+        1771612200,
+        6940
+      ],
+      [
+        1771698600,
+        6940
+      ],
+      [
+        1771785000,
+        6940
+      ],
+      [
+        1771871400,
+        5850
+      ],
+      [
+        1771957800,
+        5850
+      ],
+      [
+        1772044200,
+        5850
+      ],
+      [
+        1772130600,
+        5850
+      ],
+      [
+        1772217000,
+        6912
+      ],
+      [
+        1772303400,
+        6940
+      ],
+      [
+        1772389800,
+        6940
+      ],
+      [
+        1772476200,
+        6940
+      ],
+      [
+        1772562600,
+        5654
+      ],
+      [
+        1772649000,
+        5654
+      ],
+      [
+        1772735400,
+        6940
+      ],
+      [
+        1772821800,
+        6940
+      ],
+      [
+        1772908200,
+        6940
+      ],
+      [
+        1772994600,
+        5654
+      ],
+      [
+        1773081000,
+        6993
+      ],
+      [
+        1773167400,
+        6811
+      ],
+      [
+        1773253800,
+        6811
+      ],
+      [
+        1773340200,
+        6993
+      ],
+      [
+        1773426600,
+        6993
+      ],
+      [
+        1773513000,
+        7265
+      ],
+      [
+        1773599400,
+        7643
+      ],
+      [
+        1773685800,
+        7711
+      ]
+    ]
+  },
+  "airports": [
+    {
+      "departure": [
+        {
+          "airport": {
+            "id": "BLR",
+            "name": "Kempegowda International Airport Bengaluru"
+          },
+          "city": "Bengaluru",
+          "country": "India",
+          "country_code": "IN",
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQIQIUfZg6v3rdHMVD96D5vTNuXwVO7zsdZy0l7s2uiyV-xuK8nJlokAp_ChoLy9r0vjJWcOOBkEvBI2g",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSFrS_QMxzjURYrYSPiuRW9uR9imYuBAhdE49jwKag7Ucgl0en4CNAtP0hf1MDSGdvhAw2s1-2w71_b-pcIyFOM1F1yMSPQLO5_XlgJc_4"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": {
+            "id": "DEL",
+            "name": "Indira Gandhi International Airport"
+          },
+          "city": "New Delhi",
+          "country": "India",
+          "country_code": "IN",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkRqzwP-0z4pH29-KifVzfrxM5wwXx56g3Hoo_ebldH9Fy8a8EjGqPzd3fZqJSKoE5tSIRC2iGJxgqzQ",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY7HqndXM-ihFCu1qUKosYR--X_yXSd-0mkQHeSUaG5rkpq5Y6uxD8CMmYUCdngZE7mV0onuN2zv_aVxGGO8xv4FMcpMlWvbXdvJFcemY"
+        }
+      ]
+    }
+  ]
+}

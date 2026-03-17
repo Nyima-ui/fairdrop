@@ -64,7 +64,6 @@ const FlightResults = () => {
         const data = await resonse.json();
         if (data && data.flights) {
           setFlights(data.flights);
-          console.log(data.flights)
         } else {
           setError(
             "We couldn't find flights for this route. Our search works best with direct flights between major airports.",

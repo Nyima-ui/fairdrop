@@ -19,7 +19,18 @@ function formatDuration(minutes: number): string {
   return `${hours} hour ${mins} min`;
 }
 
+//rough
+import fs from "fs/promises";
+async function saveData(data: Flights) {
+  try {
+    await fs.writeFile("data.json", JSON.stringify(data, null, 2), "utf8");
+  } catch (error) {
+    console.error("Failed to write data to file", error);
+  }
+}
+
 export function parseSerpFlights(data: Flights): FlightProps[] {
+  saveData(data);
   const raw = [...(data.best_flights ?? []), ...(data.other_flights ?? [])];
 
   return raw.map((itinerary) => {
@@ -32,7 +43,10 @@ export function parseSerpFlights(data: Flights): FlightProps[] {
       arrival: formatTime(lastFlight.arrival_airport.time),
       duration: formatDuration(itinerary.total_duration),
       name: firstFlight.airline,
-      price: `₹${itinerary.price.toLocaleString("en-IN")}`,
+      price:
+        itinerary.price != null
+          ? `₹${itinerary.price.toLocaleString("en-IN")}`
+          : "N/A",
       stops: stops === 0 ? "Nonstop" : stops,
       airline_logo: itinerary.airline_logo,
     };
